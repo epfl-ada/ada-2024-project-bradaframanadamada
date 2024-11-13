@@ -69,7 +69,7 @@ def compute_subset(start, end, api_key, datapath='data/plot_summaries.txt', resu
     data = load_data(datapath).reset_index(names='wikipedia_id')
     for i in range(start, end):
         summary = data.iloc[i]['summary']
-        df = compute_one_movie(i, summary, api_key)
+        df = compute_one_movie(summary, api_key)
         df['wikipedia_id'] = data.iloc[i]['wikipedia_id']
         dfs.append(df)
     processed_data = pd.concat(dfs)
@@ -82,7 +82,7 @@ if __name__ == '__main__':
     # (limit should be around 10000 requests per day
     # calling it on the full data might crash)
     start = 0
-    end = 2
+    end = 9000
     #=========================================#
     api_key = os.environ['OPENAI_API_KEY']
     comp = compute_subset(start, end, api_key, datapath='data/plot_summaries.txt')
