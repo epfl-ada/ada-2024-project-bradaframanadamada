@@ -16,7 +16,7 @@ if __name__=='__main__':
     character_data.set_index([character_data.index, 'character_name'], inplace=True)
     character_data.index.names = ['wikipedia_id', 'name']
 
-    # inner join on chracter name and movie id to link the personas to the actor who played them
+    # inner join on character name and movie id to link the personas to the actor who played them
     joined_df = assigned_clusters.join(character_data, how='inner')
 
     # sort by actor age at movie release
