@@ -4,7 +4,7 @@
 
 # Defining Success in Acting: Analysing Career Paths, Role Choices, and Film Impact
 
-## Abstract
+## Abstract
 
 The goal of our analysis is to understand the factors that define a successful actor's career, focusing on career paths, role choices, and the film in which the actor chooses to appear. We will first try to find the possible career path of an actor and the different stages of his career according to the character type and the role of this character that an actor has played and the genre he has played in. We will then try to understand which actor's career/ career path is successful by analysing the budgets of the films where the actor has played in and the opinion of the spectator on a film.  We will study the awards that a film or an actor obtains in different categories or world regions to analyse the impact of an actor in the cinematographic community. Finally, we will study if the academic part, the family or the nationality of an actor can play a role in the success of an actor's career. 
 
@@ -31,23 +31,30 @@ The goal of our analysis is to understand the factors that define a successful a
 - **AWARDS:** This dataset (https://github.com/DLu/oscar_data) is used to get which movies and actors are nominees for the awards and in which category
 
 ## Methods
-### For Q1: 
+### For Q1: 
 **Character’s archetype extraction:** We will use the NLP model GPT4o mini to extract each character from the film’s summary and assign to each character their archetypes. The clusters on the chractter’s archetype are defined using the classification defined on this website (see: https://nofilmschool.com/character-archetypes). There is also the character’s occupation defined in the wikidata character but we are not sure if we will use this data since not a lot of character’s have wikidata information, we can use it to complete the character type analyses obtained previously. 
+
 **Defined actor’s career step and paths:** We will join each character-personas tuple computed in the first step with the character metadata for the CMU dataset. Then we can group the data by actor name, and aggregate the data ordered chronologically to obtain for each actor a chronological list of each character he played.
+
 **Movie genre selection by the actor:** We will study if an actor always plays in the same genre of film or if he plays in a large number of films.
 
-### For Q2:
+### For Q2:
 **Wikidata extraction:** Use the sparql api to extract all the film related data from wikidata.
+
 **Preprocessing and cleaning:** Link the wikidata, cmu and imdb ratings dataset and clean it.
+
 **Analyse the data:** Analyse the resulting dataset and try to see for correlation between the budget, ratings and box office to answer the Q2.
 
 ### For Q3:
 **Preprocessing and cleaning:** Clean and analyse separately the awards coming from the wikidata actor database and the Award database.
+
 **Link the data and analyse:** Link the two dataset and analyse the data obtained to answer to the Q3.
 
 ### For Q4:
 **Impact of the family environment:** By extracting from the wikidata of actors the children and the spouses and by using the actor’s success from Q2 and Q3, we  will try to understand the family environment has an influence on his career’s success. 
+
 **Impact of the academic background:**  By extracting the academic background from the actor wikidata, we will see if given universities have formed many notorious actors(notoriety extracted from Q2 and Q3). 
+
 **Impact of the actor’s nationality:** We can study the relation between the film's country production and the nationality of the actor, and also the relation between the actor’s nationality and the actor’s notoriety ( from Q2 and Q3). 
 
 ## Proposed timeline
