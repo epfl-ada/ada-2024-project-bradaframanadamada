@@ -7,4 +7,5 @@ wandb==0.17.2
 numpy
 openai
 pydantic
+pandas
 #torch (figure out how to do it with cuda)
