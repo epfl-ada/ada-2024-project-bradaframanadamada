@@ -3,7 +3,7 @@ import time
 import pandas as pd
 import requests
 from tqdm import tqdm
-from clean_country import country_mapping
+from src.utils.clean_country import country_mapping
 
 class WikiDataActorLoader:
     """
@@ -22,9 +22,10 @@ class WikiDataActorLoader:
 
     def fetch_actors(self, freebase_ids):
         """
-        Function to fetch actor data in batches with retry on failure.
+        Function to fetch actor data with retry on failure.
 
         :param offset: the offset used for the query.
+        :param freebase_ids: the list of actor freebase id to retrieve.
         """
         query = f"""
             SELECT ?actor ?actorLabel ?birth_date ?death_date ?genderLabel ?imdb_id ?freebase_id 
@@ -125,9 +126,10 @@ class WikiDataActorLoader:
 
     def load_wikidata(self, fileName, freebase_IDs):
         """
-        Function used to load the Wikidata with all the actors present and save the result into a CSV file.
+        Function used to load the Wikidata with all the actors present in the freebase ids list and save the result into a CSV file.
 
         :param fileName: the name of the CSV file where the data will be saved.
+        :param freebase_ids: the list of actor freebase id to retrieve.
         """
         
         # Initialize storage for data

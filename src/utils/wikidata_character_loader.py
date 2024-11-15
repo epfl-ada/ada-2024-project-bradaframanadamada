@@ -21,9 +21,10 @@ class WikiDataCharacterLoader:
 
     def fetch_characters(self, freebase_ids):
         """
-        Function to fetch characters data in batches with retry on failure.
+        Function to fetch characters data with retry on failure.
 
         :param offset: the offset used for the query.
+        :param freebase_ids: the list of freebase IDs of the character that we would like to retrive on the wikidata.
         """
         query = f"""
         SELECT ?character ?characterLabel ?freebase_id
@@ -113,6 +114,7 @@ class WikiDataCharacterLoader:
         Function used to load the Wikidata with all the actors present and save the result into a CSV file.
 
         :param fileName: the name of the CSV file where the data will be saved.
+        :param freebase_ids: the list of freebase IDs of the character that we would like to retrive on the wikidata.
         """
         
         # Initialize storage for data
