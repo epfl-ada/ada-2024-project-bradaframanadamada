@@ -181,8 +181,8 @@ class WikiDataActorLoader:
         """
         Clean the data that contains the actors data.
 
-        :param fileName: the name of the file that contains the ators data.
-        :param newFileName: the name of the csv file whre the clean will be saved.
+        :param fileName: the name of the file that contains the actors data.
+        :param newFileName: the name of the csv file where the clean will be saved.
         :return: the clean dataframe.
         """
         df_data_not_clean = pd.read_csv(fileName)

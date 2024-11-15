@@ -1,4 +1,4 @@
-# a map used to clean the countries in the Database (genrated with Chat GPT for simplicity)
+# a map used to clean the countries in the Database (generated with ChatGPT for simplicity)
 country_mapping = {
     # Modern countries
     'United States of America': 'United States',

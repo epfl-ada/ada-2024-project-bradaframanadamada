@@ -69,7 +69,7 @@ while True:
     
     # Extract and store results
     results = data.get("results", {}).get("bindings", [])
-    print(f"Data recieved : {len(results)}")
+    print(f"Data received : {len(results)}")
     if not results:
         print("No more results, ending pagination.")
         break

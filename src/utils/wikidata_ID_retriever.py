@@ -11,10 +11,10 @@ class WikidataIDRetriever:
 
         def retrieve_wikidata_ID(self, freebase_ID):
             """
-            Function used to retrive a Wikidata ID from a given freebase ID.
+            Function used to retrieve a Wikidata ID from a given freebase ID.
 
             :param freebase_ID: the freebase ID that w want to convert to potential wikidata ID.
-            :return: The Wikidata ID if it exist, otherwise None.
+            :return: The Wikidata ID if it exists, otherwise None.
             """
 
             # the query used to find the wikidata IDs

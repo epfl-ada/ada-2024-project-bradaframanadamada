@@ -14,11 +14,11 @@ class ParentsFromChildrenRetriever:
         for _, row in actor_wikidata.iterrows():
             # for each child, affect the parent_name associated
             for child in row['children']:
-                # check if the child is alread present in the dictionary
+                # check if the child is already present in the dictionary
                 if child not in self.child_to_parents:
                     self.child_to_parents[child] = []
                 parentName = row['actorLabel']
-                # check if the parent is already present in the array of parent asscoiated to the child ( evict duplicates)
+                # check if the parent is already present in the array of parent associated to the child ( evict duplicates)
                 if parentName not in self.child_to_parents[child]:
                     self.child_to_parents[child].append(parentName)
         

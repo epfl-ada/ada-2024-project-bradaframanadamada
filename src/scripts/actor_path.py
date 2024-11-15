@@ -23,7 +23,7 @@ if __name__=='__main__':
     # group by actor name
     # select attributes where an aggregate is needed
     # make a list of with these attributes for each group
-    # result is a set of attributes, sorted chronologically, for each movies the actor played in
+    # result is a set of attributes, sorted chronologically, for each movie the actor played in
     # => actor career path
     newindex_df = joined_df.reset_index()
     result_df = newindex_df.sort_values(['actor_age'], ascending=True).groupby('actor_name')[['persona', 'actor_age', 'wikipedia_id']].agg(

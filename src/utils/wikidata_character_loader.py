@@ -24,7 +24,7 @@ class WikiDataCharacterLoader:
         Function to fetch characters data with retry on failure.
 
         :param offset: the offset used for the query.
-        :param freebase_ids: the list of freebase IDs of the character that we would like to retrive on the wikidata.
+        :param freebase_ids: the list of freebase IDs of the character that we would like to retrieve on the wikidata.
         """
         query = f"""
         SELECT ?character ?characterLabel ?freebase_id
@@ -114,7 +114,7 @@ class WikiDataCharacterLoader:
         Function used to load the Wikidata with all the actors present and save the result into a CSV file.
 
         :param fileName: the name of the CSV file where the data will be saved.
-        :param freebase_ids: the list of freebase IDs of the character that we would like to retrive on the wikidata.
+        :param freebase_ids: the list of freebase IDs of the character that we would like to retrieve on the wikidata.
         """
         
         # Initialize storage for data
@@ -160,7 +160,7 @@ class WikiDataCharacterLoader:
         Clean the data that contains the characters data.
 
         :param fileName: the name of the file that contains the character data.
-        :param newFileName: the name of the csv file whre the clean will be saved.
+        :param newFileName: the name of the csv file where the clean will be saved.
         :return: the clean dataframe.
         """
         df_data_not_clean = pd.read_csv(fileName)
