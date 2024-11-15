@@ -9,3 +9,4 @@ openai
 pydantic
 pandas
 #torch (figure out how to do it with cuda)
+SPARQLWrapper
