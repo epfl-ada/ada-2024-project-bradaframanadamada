@@ -24,7 +24,7 @@ The goal of our analysis is to understand the factors that define a successful a
 4. **Does the academic and environmental background of an actor have an impact on his career success ? (Q4)**
 
 ## Proposed additional datasets
-- **Wikidata:** used for films to extract the imdb id, budget, awards, nomination. We have extracted all wikidata information from the freebase actor ID:  the birth date, death date , the gender, the actor’s imdb_id,  the nationality, the occupation list,the spouse list , the children list ,the academic background ,the list of awards received. We also extracted wikidata information from the character freebase ID: the occupation list, the allies of the characters, the wikidata ID and the actor’s affiliation list. 
+- **Wikidata:** It is used for films to extract the imdb id, budget, awards, nomination based on the freebase ID of the films in the CMU dataset. We have extracted all wikidata information from the freebase actor ID:  the birth date, death date, the gender, the actor’s imdb_id, the nationality list, the occupation list, the spouse list, the children list, the academic background, the list of awards received. We also extracted wikidata information from the character freebase ID: the occupation list, the allies of the characters, the wikidata ID and the actor’s affiliation list. 
 
 - **IMDB:** this dataset is used to get the audience ratings of a film which will be used along the budget and box office revenue.
 
@@ -32,10 +32,9 @@ The goal of our analysis is to understand the factors that define a successful a
 
 ## Methods
 ### For Q1: 
-**Character’s archetype extraction:** We will use the NLP model GPT4o mini to extract each character from the film’s summary and assign to each character their archetypes. The clusters on the chractter’s archetype are defined using the classification defined on this website (see: https://nofilmschool.com/character-archetypes). There is also the character’s occupation defined in the wikidata character but we are not sure if we will use this data since not a lot of character’s have wikidata information, we can use it to complete the character type analyses obtained previously. 
+**Character’s archetype extraction:** We will use the NLP model GPT4o mini to extract each character from the film’s summary and assign to each character their archetypes. The clusters on the character’s archetype are defined using the classification defined on this website (see: https://nofilmschool.com/character-archetypes). We have also extracted for each actor wikidata their occupation (actor, singer, ...) which can give more information. There is also the character’s occupation defined in the wikidata character but we are not sure if we will use this data since not a lot of character’s have wikidata information, we can use it to complete the character type analysis obtained previously. 
 
 **Defined actor’s career step and paths:** We will identify some stages through the career of an actor. We will look at how many films have been made in a given period. We will also see which genre is the prefered during a certain stage of the actor's career or if he/she changed their favorite realisation country. 
-
 
 **Movie genre selection by the actor:** We will study if an actor always plays in the same genre of film or if he plays in a large number of films.
 
