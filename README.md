@@ -21,7 +21,7 @@ The goal of our analysis is to understand the factors that define a successful a
 
 3. **How can we measure the impact of an award on an actor's career in the cinematic field ? (Q3)**
 
-4. **Does the academic and environmental background of an actore have an impact on his career success ? (Q4)**
+4. **Does the academic and environmental background of an actor have an impact on his career success ? (Q4)**
 
 ## Proposed additional datasets
 - **Wikidata:** used for films to extract the imdb id, budget, awards, nomination. We have extracted all wikidata information from the freebase actor ID:  the birth date, death date , the gender, the actor’s imdb_id,  the nationality, the occupation list,the spouse list , the children list ,the academic background ,the list of awards received. We also extracted wikidata information from the character freebase ID: the occupation list, the allies of the characters, the wikidata ID and the actor’s affiliation list. 
