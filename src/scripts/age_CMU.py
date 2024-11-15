@@ -46,7 +46,7 @@ def name_and_filter_columns(movies_df, characters_df):
     characters_df.columns = ['Wikipedia movie ID', 'Freebase movie ID', 'Movie release date', 'Character name', 'Actor date of birth', 'Actor gender', 'Actor height (in meters)', 'Actor ethnicity (Freebase ID)', 'Actor name', 'Actor age at movie release', 'Freebase character/actor map ID', 'Freebase character ID', 'Freebase actor ID']
 
     movies_df = movies_df[['Freebase movie ID', 'Movie name', 'Movie release date', 'Movie countries', 'Movie genres']]
-    characters_df = characters_df[['Freebase movie ID', 'Character name', 'Actor date of birth', 'Actor gender', 'Actor name', 'Actor age at movie release', 'Freebase actor ID']]
+    characters_df = characters_df[['Freebase movie ID', 'Character name', 'Actor date of birth', 'Actor gender', 'Actor name', 'Actor age at movie release', 'Freebase character ID', 'Freebase actor ID']]
 
     return movies_df, characters_df
 
@@ -116,7 +116,6 @@ def complete_age(df):
     """
     indices = np.where(pd.isna(df['Actor age at movie release']))[0]
     df.loc[indices, 'Actor age at movie release'] = df.loc[indices, 'Movie release date'] - df.loc[indices, 'Actor date of birth']
-    df = df[pd.notna(df['Actor age at movie release'])]
     df = df.drop(columns=['Actor date of birth', 'Movie release date'])
 
     return df
