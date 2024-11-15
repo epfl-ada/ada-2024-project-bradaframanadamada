@@ -13,7 +13,7 @@ class WikiDataActorLoader:
     def __init__(self):
         # Define SPARQL endpoint and query template
         self.SPARQL_ENDPOINT = "https://query.wikidata.org/sparql"
-        self.STEP = 100
+        self.STEP = 100 # Number of data retrieve at each step
         self.MAX_RETRIES = 7  # Maximum number of retries on failure
         self.RETRY_DELAY = 2  # Delay in seconds between retries
         self.DELAY_FACTOR = 2  # Factor to multiply to have an exponential delay when retrying
@@ -112,7 +112,7 @@ class WikiDataActorLoader:
         delay = self.RETRY_DELAY
         for attempt in range(self.MAX_RETRIES):
             try:
-                response = sparql.query().convert()  # Execute the query
+                response = sparql.query().convert() 
                 return (response, None)
                 
             except Exception as e:
@@ -122,7 +122,8 @@ class WikiDataActorLoader:
                     delay = delay * self.DELAY_FACTOR
                 else:
                     print("Max retries reached, skipping this batch.")
-                    return (None, freebase_ids)  # Return None if all retries fail
+                    # Return None if all retries fail
+                    return (None, freebase_ids)  
 
     def load_wikidata(self, fileName, freebase_IDs):
         """
@@ -132,7 +133,7 @@ class WikiDataActorLoader:
         :param freebase_ids: the list of actor freebase id to retrieve.
         """
         
-        # Initialize storage for data
+        # Initialize the stack of results.
         all_data = []
         failed_IDs = []
         steps = range(0, len(freebase_IDs), self.STEP)

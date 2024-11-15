@@ -61,6 +61,7 @@ def plot_nan_values(df, plot_title):
     indices = df.isnull().sum().index.to_list()
     nan_count = df.isnull().sum().to_list()
     plt.bar(indices, nan_count)
+    plt.xticks(rotation= 45)
 
 def print_nan_info(df):
     """
