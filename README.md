@@ -51,7 +51,7 @@ The goal of our analysis is to understand the factors that define a successful a
 **Link the data and analyse:** Link the two dataset and analyse the data obtained to answer to the Q3.
 
 ### For Q4:
-**Impact of the family environment:** By extracting from the wikidata of actors the children and the spouses and by using the actor’s success from Q2 and Q3, we  will try to understand the family environment has an influence on his career’s success. 
+**Impact of the family environment:** By extracting from the wikidata of actors the children and the spouses and by using the actor’s success from Q2 and Q3, we will try to understand if the family environment has an influence on his career’s success. 
 
 **Impact of the academic background:**  By extracting the academic background from the actor wikidata, we will see if given universities have formed many notorious actors(notoriety extracted from Q2 and Q3). 
 
