@@ -17,7 +17,7 @@ The goal of our analysis is to understand the factors that define a successful a
 
 1. **What are the possible career paths, steps and possible trajectories ? (Q1)**
 
-2. **How can we define a good actor's performance in a film based on the film’s success ? (Q2)**
+2. **How can we define a good actor's performance based on the film’s success he performed in ? (Q2)**
 
 3. **How can we measure the impact of an award on an actor's career in the cinematic field ? (Q3)**
 
