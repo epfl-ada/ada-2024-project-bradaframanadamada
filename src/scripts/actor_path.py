@@ -3,7 +3,7 @@ import os
 
 if __name__=='__main__':
     # load file containing characters and their personas
-    assigned_clusters = pd.read_pickle('../data/processed_data0-9000.pkl')
+    assigned_clusters = pd.read_pickle('../data/processed_data.pkl')
 
     # load characters metadata
     character_data = pd.read_csv('../../data/character.metadata.tsv', sep='\t', index_col=0,
