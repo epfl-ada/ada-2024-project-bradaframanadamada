@@ -81,8 +81,8 @@ if __name__ == '__main__':
     # manually select this
     # (limit should be around 10000 requests per day
     # calling it on the full data might crash)
-    start = 0
-    end = 9000
+    start = 36000
+    end = 42303
     #=========================================#
     api_key = os.environ['OPENAI_API_KEY']
     comp = compute_subset(start, end, api_key, datapath='data/plot_summaries.txt')
