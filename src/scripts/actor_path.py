@@ -10,7 +10,6 @@ if __name__=='__main__':
 
     # set indices for inner join
     assigned_clusters.set_index(['wikipedia_id', 'name'], inplace=True)
-    # TODO have the wikipedia id in the metadata, now it isn't which breaks everything
     character_data.set_index(['Wikipedia movie ID', 'Character name'], inplace=True)
     character_data.index.names = ['wikipedia_id', 'name']
     print(assigned_clusters.columns)
