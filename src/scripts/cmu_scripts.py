@@ -45,7 +45,7 @@ def name_and_filter_columns(movies_df, characters_df):
     movies_df.columns = ['Wikipedia movie ID', 'Freebase movie ID', 'Movie name', 'Movie release date', 'Movie box office revenue', 'Movie runtime', 'Movie languages', 'Movie countries', 'Movie genres']
     characters_df.columns = ['Wikipedia movie ID', 'Freebase movie ID', 'Movie release date', 'Character name', 'Actor date of birth', 'Actor gender', 'Actor height (in meters)', 'Actor ethnicity (Freebase ID)', 'Actor name', 'Actor age at movie release', 'Freebase character/actor map ID', 'Freebase character ID', 'Freebase actor ID']
 
-    movies_df = movies_df[['Freebase movie ID', 'Movie name', 'Movie release date', 'Movie countries', 'Movie genres']]
+    movies_df = movies_df[['Wikipedia movie ID', 'Freebase movie ID', 'Movie name', 'Movie release date', 'Movie countries', 'Movie genres']]
     characters_df = characters_df[['Freebase movie ID', 'Character name', 'Actor date of birth', 'Actor gender', 'Actor name', 'Actor age at movie release', 'Freebase character ID', 'Freebase actor ID']]
 
     return movies_df, characters_df
