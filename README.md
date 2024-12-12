@@ -99,3 +99,4 @@ The directory structure of the project looks like this:
 ├── pip_requirements.txt        <- File for installing python dependencies
 └── README.md
 ```
+[Click here to open the main website](data_stories.html)
