@@ -29,9 +29,9 @@ def create_relation_graph_personas_occupations():
     # Iterate over all the lines of the dataset.
     for _, row in actor_merged.iterrows():
         # Check if 'occupation' is not NaN
-        if pd.notna(row['occupation']):
+        if pd.notna(row['occupation_lst']):
             # Transform the list in string format into a real list (due to the fact that the data are registered in a CSV file).
-            occupations = ast.literal_eval(row['occupation'])
+            occupations = ast.literal_eval(row['occupation_lst'])
             # Concatenate the personas
             personas = set([elem for sub_lst in row['personas_list'] for elem in sub_lst])
             # Iterate over all the personas
