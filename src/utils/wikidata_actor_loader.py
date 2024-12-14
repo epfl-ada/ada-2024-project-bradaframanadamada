@@ -187,6 +187,9 @@ class WikiDataActorLoader:
         :return: the clean dataframe.
         """
         df_data_not_clean = pd.read_csv(fileName)
+
+        # Print the initial number of elements
+        print(f'Initial number of elements : {df_data_not_clean.shape[0]}')
         
         # remove empty columns
         for column in df_data_not_clean.columns:
@@ -202,6 +205,73 @@ class WikiDataActorLoader:
         # clean the nationality list
         df_data_not_clean['nationality'] = df_data_not_clean['nationality'].apply(lambda x: [country_mapping.get(elem) for elem in x])
 
+        # Show the duplicated elements
+        duplicates = df_data_not_clean[df_data_not_clean.duplicated(subset=["freebase_id"], keep=False)]
+        print(f'Number of duplicated elements with the freebase id: {duplicates.shape[0]}')
+
+        # Print the duplicates for the 10 first
+        for key, elems in duplicates.head(10).groupby('freebase_id'):
+            print(f"For the freebase id {key} differences between:")
+            print(elems)
+            print("\n***********************************************\n")
+
+        # Return the first valid string in a list of string.
+        def get_first_string(lst):
+            valid_string = set([elem for elem in lst if isinstance(elem, str)])
+            if len(valid_string) > 0:
+                return list(valid_string)[0]
+            else:
+                return None
+
+
+        # These duplicates can be explained by the fact that a freebase id can point to different wikipedia pages.
+        # We will join this duplicates
+        grou_by_data_not_clean = df_data_not_clean.groupby(['freebase_id']).agg({
+            'actorLabel': lambda x: get_first_string(x), # keep the first non-nan name
+            'birth_date': lambda x: get_first_string(x), # keep the first non-nan birthdate
+            'death_date': lambda x: get_first_string(x), # keep the first non-nan death date
+            'gender': lambda x: get_first_string(x), # keep the first non-nan gender
+            'imdb_id': lambda x: list(set([elem for elem in x if isinstance(elem, str)])), # make a list of unique valid imdb ID
+            'nationality': lambda x: list(set([elem for sublist in x if isinstance(sublist, list) for elem in sublist])), # Make a list of valid unique nationalities.
+            'occupation': lambda x: list(set([elem for sublist in x if isinstance(sublist, list) for elem in sublist])), # Make a list of valid unique occupations.
+            'spouse': lambda x: list(set([elem for sublist in x if isinstance(sublist, list) for elem in sublist])), # Make a list of valid unique spouse.
+            'children': lambda x: list(set([elem for sublist in x if isinstance(sublist, list) for elem in sublist])), # Make a list of valid unique children.
+            'alma_mater': lambda x: list(set([elem for sublist in x if isinstance(sublist, list) for elem in sublist])), # Make a list of valid unique alma_mater.
+            'award_received': lambda x: list(set([elem for sublist in x if isinstance(sublist, list) for elem in sublist])), # Make a list of valid unique award_received.
+            'wikidata_id': lambda x: list(set([elem for elem in x if isinstance(elem, str)])), # make a list of unique valid wikidata ID
+        }).reset_index()
+        # Check the number of duplicated elements
+        duplicates = grou_by_data_not_clean[grou_by_data_not_clean.duplicated(subset=["freebase_id"], keep=False)]
+        print(f'Number of duplicated elements after cleaning: {len(duplicates)}')
+
+        # rename the columns
+        grou_by_data_not_clean = grou_by_data_not_clean.rename(columns={'actorLabel': 'actor_name',
+                                                                        'imdb_id': 'imdb_id_lst',
+                                                                        'nationality': 'nationality_lst',
+                                                                        'occupation': 'occupation_lst',
+                                                                        'spouse': 'spouse_lst',
+                                                                        'children': 'children_lst',
+                                                                        'alma_mater': 'alma_mater_lst',
+                                                                        'award_received': 'award_received_lst',
+                                                                        'wikidata_id': 'wikidata_id_lst'})
+        # only keep the useful elements
+        grou_by_data_not_clean = grou_by_data_not_clean[['freebase_id',
+                                                         'actor_name',
+                                                         'birth_date',
+                                                         'death_date',
+                                                         'gender',
+                                                         'imdb_id_lst',
+                                                         'nationality_lst',
+                                                         'occupation_lst',
+                                                         'spouse_lst',
+                                                         'children_lst',
+                                                         'alma_mater_lst',
+                                                         'award_received_lst',
+                                                         'wikidata_id_lst']]
+
+        # Print the number of elements after the cleaning process
+        print(f'Number of elements after cleaning: {grou_by_data_not_clean.shape[0]}')
+
         # save the data clean
-        df_data_not_clean.to_csv(f"{newFileName}.csv", index=False)
-        return df_data_not_clean
+        grou_by_data_not_clean.to_csv(f"{newFileName}", index=False)
+        return grou_by_data_not_clean

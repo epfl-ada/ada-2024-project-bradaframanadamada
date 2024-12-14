@@ -192,11 +192,11 @@ class WikiDataCharacterLoader:
         # These duplicates can be explained by the fact that a freebase id can point to different wikipedia pages.
         # We will join this duplicates
         grou_by_data_not_clean = df_data_not_clean.groupby(['freebase_id']).agg({
-            'characterLabel': lambda x: list(set(x)),
+            'characterLabel': lambda x: list(set([elem for elem in x if isinstance(elem, str)])),
             'occupation': lambda x: list(set([elem for sublist in x if isinstance(sublist, list) for elem in sublist])),
             'affiliation': lambda x: list(set([elem for sublist in x if isinstance(sublist, list) for elem in sublist])),
             'allies': lambda x: list(set([elem for sublist in x if isinstance(sublist, list) for elem in sublist])),
-            'wikidata_id': lambda x: list(set(x))
+            'wikidata_id': lambda x: list(set([elem for elem in x if isinstance(elem, str)]))
         }).reset_index()
         # Check the number of duplicated elements
         duplicates = grou_by_data_not_clean[grou_by_data_not_clean.duplicated(subset=["freebase_id"], keep=False)]
