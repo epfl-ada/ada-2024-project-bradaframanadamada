@@ -11,20 +11,26 @@ def create_relation_graph_personas_characters_occupations():
 
     # Load the careers paths of the actors to retrieve the list of their personas.
     personas_dataset = pd.read_pickle('src/data/clean_careers_paths_good_personas.pkl')
+    # Only keep the relevant infos
+    personas_dataset =  personas_dataset[['personas_list', 'wikipedia_movies_id', 'freebase_actor_id']]
+
     # Load the dataset that contains the activities of each character.
     character_dataset = pd.read_csv('src/data/wikidata_characters_clean.csv')
+    # Only keep the relevant infos
+    character_dataset = character_dataset[['freebase_id', 'occupation_lst']]
+
     # Load the dataset that contains the cmu movies infos
     cmu_data = pd.read_pickle("src/data/metadata_cmu.pkl")
+    # Only keep the relevant information from the CMU data
+    cmu_data = cmu_data[['Wikipedia movie ID', 'Freebase actor ID', 'Freebase character ID']]
+    # remove the duplicates
+    cmu_data = cmu_data.drop_duplicates(subset=['Wikipedia movie ID', 'Freebase actor ID', 'Freebase character ID'])
 
     # Explode the lists of personas dataset to have a single list of personas associated to a single wikidata id.
-    print(personas_dataset.columns)
-    df_personas_wikidata_id = personas_dataset[
-        ['personas_list', 'wikipedia_movies_id', 'freebase_actor_id']
-    ]
-    df_personas_wikidata_id = df_personas_wikidata_id.explode(['personas_list','wikipedia_movies_id'])
+    df_personas_wikidata_id = personas_dataset.explode(['personas_list','wikipedia_movies_id'])
     print(f'Number of tuples (wikipedia_movie_id, freebase_actor_id) associated to a list of personas: {df_personas_wikidata_id.shape[0]}')
 
-    # merge the obtain dataset with teh cmu_data to retrive the character freebase id for each tuple (wikipedia movie id, freebase actor id)
+    # merge the obtain dataset with teh cmu_data to retrieve the character freebase id for each tuple (wikipedia movie id, freebase actor id)
     df_personas_wikidata_id_characters = pd.merge(
         df_personas_wikidata_id,
         cmu_data,
@@ -35,9 +41,9 @@ def create_relation_graph_personas_characters_occupations():
     print(f'Number of tuples (wikipedia_movie_id, freebase_actor_id) associated to a list of personas and a character freebase id: {df_personas_wikidata_id.shape[0]}')
 
     # only select from the wikidata character database actor with an occupation.
-    character_dataset['occupation'] = character_dataset['occupation'].dropna().apply(lambda x: ast.literal_eval(x))
-    characters_with_occupation = character_dataset[character_dataset['occupation'].apply(lambda x: isinstance(x, list) and len(x) > 0)]
-    print(f'Number of characters with occupation: {len(characters_with_occupation)}')
+    character_dataset['occupation_lst'] = character_dataset['occupation_lst'].dropna().apply(lambda x: ast.literal_eval(x))
+    characters_with_occupation = character_dataset[character_dataset['occupation_lst'].apply(lambda x: isinstance(x, list) and len(x) > 0)]
+    print(f'Number of characters with occupation: {characters_with_occupation.shape[0]}')
 
     # associated each personas list to the corresponding character's occupations
     df_personas_wikidata_id_characters_occupations = pd.merge(
@@ -49,18 +55,19 @@ def create_relation_graph_personas_characters_occupations():
     )
 
     print(f'Number of characters with a list of personas and an occupation list : {df_personas_wikidata_id_characters_occupations.shape[0]}')
+    print(f'Since a character is present more than one time in the role distribution, each character can be associated to more than one list of personas.')
 
     # only associate each persona list to a list of character's occupations
-    df_personas_occupations = df_personas_wikidata_id_characters_occupations[['personas_list', 'occupation']]
+    df_personas_occupations = df_personas_wikidata_id_characters_occupations[['personas_list', 'occupation_lst']]
 
     # Explode the list of personas.
     df_personas_occupations = df_personas_occupations.explode('personas_list')
 
     # Explode the list of occupations
-    df_personas_occupations = df_personas_occupations.explode('occupation')
+    df_personas_occupations = df_personas_occupations.explode('occupation_lst')
 
     # count how many times time each tuple is present
-    personas_occupation_count = Counter(zip(df_personas_occupations['personas_list'], df_personas_occupations['occupation']))
+    personas_occupation_count = Counter(zip(df_personas_occupations['personas_list'], df_personas_occupations['occupation_lst']))
 
     # Create a structure to be able to plot the data
     personas_characters_occupations_plot_data = {}
