@@ -165,7 +165,10 @@ class WikiDataCharacterLoader:
         :return: the clean dataframe.
         """
         df_data_not_clean = pd.read_csv(fileName)
-        
+
+        # Print the initial number of elements
+        print(f'Initial number of elements : {df_data_not_clean.shape[0]}')
+
         # remove empty columns
         for column in df_data_not_clean.columns:
             if(df_data_not_clean[column].isna().all()):
@@ -176,9 +179,47 @@ class WikiDataCharacterLoader:
             df_data_not_clean[column] = df_data_not_clean[column].apply(
                 lambda x: list(x.split(', ')) if isinstance(x, str) else x
             )
-            
+
+        duplicates = df_data_not_clean[df_data_not_clean.duplicated(subset=["freebase_id"], keep=False)]
+
+        # Show the duplicated elements
+        print(f'Number of duplicated elements: {duplicates.shape[0]}')
+        for key, elems in duplicates.groupby('freebase_id'):
+            print(f"For the freebase id {key} differences between:")
+            print(elems)
+            print("\n***********************************************\n")
+
+        # These duplicates can be explained by the fact that a freebase id can point to different wikipedia pages.
+        # We will join this duplicates
+        grou_by_data_not_clean = df_data_not_clean.groupby(['freebase_id']).agg({
+            'characterLabel': lambda x: list(set(x)),
+            'occupation': lambda x: list(set([elem for sublist in x if isinstance(sublist, list) for elem in sublist])),
+            'affiliation': lambda x: list(set([elem for sublist in x if isinstance(sublist, list) for elem in sublist])),
+            'allies': lambda x: list(set([elem for sublist in x if isinstance(sublist, list) for elem in sublist])),
+            'wikidata_id': lambda x: list(set(x))
+        }).reset_index()
+        # Check the number of duplicated elements
+        duplicates = grou_by_data_not_clean[grou_by_data_not_clean.duplicated(subset=["freebase_id"], keep=False)]
+        print(f'Number of duplicated elements after cleaning: {len(duplicates)}')
+
+        # rename the columns
+        grou_by_data_not_clean = grou_by_data_not_clean.rename(columns={'characterLabel': 'character_name_lst',
+                                                                        'occupation': 'occupation_lst',
+                                                                        'affiliation': 'affiliation_lst',
+                                                                        'allies': 'allies_lst',
+                                                                        'wikidata_id': 'wikidata_id_lst'})
+        # only keep the useful elements
+        grou_by_data_not_clean = grou_by_data_not_clean[['freebase_id',
+                                                         'character_name_lst',
+                                                         'occupation_lst',
+                                                         'affiliation_lst',
+                                                         'allies_lst',
+                                                         'wikidata_id_lst']]
+
+        # Print the number of elements after the cleaning process
+        print(f'Number of elements after cleaning: {grou_by_data_not_clean.shape[0]}')
 
         # save the data clean
-        df_data_not_clean.to_csv(f"{newFileName}.csv", index=False)
-        return df_data_not_clean
+        grou_by_data_not_clean.to_csv(f"{newFileName}", index=False)
+        return grou_by_data_not_clean
 
