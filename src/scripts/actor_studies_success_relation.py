@@ -1,8 +1,14 @@
 import pandas as pd
 import ast
 import matplotlib.pyplot as plt
+from src.scripts.actors_normalized_popularity_scores import get_normalized_popularity_scores
 
 def create_actor_studies_success_relation_graph():
+    """
+    This function creates a graph to visualize the relationship between actor studies and their popularity (calculated in
+    function of the public's opinion on the actor (part 2 of the overall analysis, the awards that an actor received
+    (Part 3 of the overall analysis), and the combination of the public's opinion and the awards received).
+    """
     # load the dataset that contains wikidata infos of the actors
     actors_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv")
     # only extract the actor name, the actor freebase ID and the alma_mater (universities background) from the data
@@ -13,56 +19,29 @@ def create_actor_studies_success_relation_graph():
     actors_wikidata = actors_wikidata[actors_wikidata["alma_mater_lst"].apply(lambda x: len(x) > 0)]
     # Print the number of actors with a university background defined.
     print(f'Number of actors with a university background defined : {actors_wikidata.shape[0]}')
-    # Load the dataset that contains the success score based on the film's review and the box office.
-    actors_success = pd.read_csv("src/data/actors_success.csv")
-    # Join the actors with a university background with the success score.
-    actors_wikidata_with_success = pd.merge(actors_wikidata,
-                                            actors_success,
-                                            how="left",
-                                            left_on="freebase_id",
-                                            right_on="freebase_actor_id")
+
+    # create a dataframe with normalised popularity scores
+    popularity_scores = get_normalized_popularity_scores()
+
+    # Merge the actors wikidata with the popularity scores
+    actors_wikidata_with_popularity_scores = pd.merge(actors_wikidata,
+                                                      popularity_scores,
+                                                      how='inner',
+                                                      left_on='freebase_id',
+                                                      right_on='freebase_actor_id')
+
     # Only keep the relevant columns
-    # rename the column opinion_score
-    actors_wikidata_with_success = actors_wikidata_with_success.rename(columns={"score": "opinion_score"})
-    actors_wikidata_with_success = actors_wikidata_with_success[["freebase_id","actor_name", "alma_mater_lst", "opinion_score"]]
-    # Print the number of actor who have both a university background and a success score defined.
-    print(f'Number of actors with a university background and a success score (based on reviews and box office) defined : {actors_wikidata_with_success.shape[0]}')
-    # Load the dataset that contains the success score based on the actor's awards.
-    actors_awards = pd.read_csv("src/data/actors_awards_scores.csv")
-    # rename the column score
-    actors_awards = actors_awards.rename(columns={"score": "award_score"})
-    # Join the actors with a university background and a success score (based on reviews and box office) with the actor's award score.
-    actors_wikidata_with_award_success_and_awards = pd.merge(actors_wikidata_with_success,
-                                                             actors_awards,
-                                                             how="left",
-                                                             left_on="freebase_id",
-                                                             right_on="freebase_actor_id")
-    # Only keep the relevant columns
-    actors_wikidata_with_award_success_and_awards = actors_wikidata_with_award_success_and_awards[
-        ["freebase_id","actor_name", "alma_mater_lst", "opinion_score", "award_score"]
+    actors_wikidata_with_popularity_scores = actors_wikidata_with_popularity_scores[
+        ["freebase_id","actor_name", "alma_mater_lst", "opinion_score", "award_score", "overall_score"]
     ]
     # drop the row with nan
-    actors_wikidata_with_award_success_and_awards = actors_wikidata_with_award_success_and_awards.dropna()
+    actors_wikidata_with_popularity_scores = actors_wikidata_with_popularity_scores.dropna()
     # Print the number of actor with a university background, a success score (based on reviews and Box office) and an awards score defined
-    print(f'Number of actors with a university background, a success score (based on reviews and Box office) and an wards score defined : {actors_wikidata_with_award_success_and_awards.shape[0]}')
-
-    # Normalize the score on percent
-    max_opinion_score = actors_wikidata_with_award_success_and_awards['opinion_score'].max()
-    min_opinion_score = actors_wikidata_with_award_success_and_awards['opinion_score'].min()
-    actors_wikidata_with_award_success_and_awards["opinion_score"] = (
-            (actors_wikidata_with_award_success_and_awards["opinion_score"] - min_opinion_score)/(max_opinion_score - min_opinion_score))
-
-    max_award_score = actors_wikidata_with_award_success_and_awards['award_score'].max()
-    min_award_score = actors_wikidata_with_award_success_and_awards['award_score'].min()
-    actors_wikidata_with_award_success_and_awards["award_score"] = (
-        (actors_wikidata_with_award_success_and_awards["award_score"] - min_award_score)/(max_award_score - min_award_score))
-
-    # add a new score that equally take into account the score (based on the reviews and Boy office) and the score based on the award)
-    actors_wikidata_with_award_success_and_awards["overall_score"] = actors_wikidata_with_award_success_and_awards.apply(lambda x: (x["opinion_score"] + x["award_score"]) * 0.5, axis=1)
+    print(f'Number of actors with a university background, a success score (based on reviews and Box office) and an wards score defined : {actors_wikidata_with_popularity_scores.shape[0]}')
 
     # establish a score of the universities based on the opinion, award and overall actor's scores.
     university_scores = {}
-    for _, row in actors_wikidata_with_award_success_and_awards.iterrows():
+    for _, row in actors_wikidata_with_popularity_scores.iterrows():
         for university in row["alma_mater_lst"]:
             if university not in university_scores:
                 university_scores[university] = {
