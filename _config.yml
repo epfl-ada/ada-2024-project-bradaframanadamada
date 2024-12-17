@@ -9,7 +9,8 @@ description: The main goal of our analysis is to understand the factors that def
   obtains in different categories or world regions to analyse the impact of an actor in the cinematographic community. 
   Finally, we will study if the academic part, the family or the nationality of an actor can play a role in the success
   of an actor's career.
+show_description: False
 show_downloads: True
 navigation:
   - title: Home
-    url: data_stories.md
+    url: /data_stories.md
