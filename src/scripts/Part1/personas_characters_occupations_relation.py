@@ -110,8 +110,9 @@ def create_relation_graph_personas_characters_occupations():
             'label': persona,
             'method': 'update',
             'args': [
+                # Update teh graph with the selected persona
                 {'visible': [persona == selected_persona for selected_persona in personas]},
-                # Update teh graph with the selected persona.
+                # update the title of the graph with the new persona selected
                 {'title': f'Top 20 Character\'s occupations in relation with the {persona}\'s persona.'},
             ]
         } for persona in personas
@@ -131,7 +132,7 @@ def create_relation_graph_personas_characters_occupations():
                 'direction': 'down',
                 'showactive': True,
                 'active': 0,
-                'x': 0.5,
+                'x': 1,
                 'xanchor': 'left',
                 'y': 1.15,
                 'yanchor': 'top',
