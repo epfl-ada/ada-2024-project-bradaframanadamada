@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 
 def create_relation_graph_personas_occupations():
     """
-        This function creates an interactive bar chart that shows the relationship between personas and their associated occupations.
+        This function creates an interactive bar chart that shows the relationship for an actor between personas and their associated occupations.
     """
     # Load the careers paths of the actors to retrieve the list of their personas.
     personas_dataset = pd.read_pickle('src/data/clean_careers_paths_good_personas.pkl')
@@ -86,7 +86,7 @@ def create_relation_graph_personas_occupations():
             'method': 'update',
             'args': [
                 {'visible': [persona == selected_persona for selected_persona in personas]},  # Update teh graph with the selected persona.
-                {'title': f'Top 20 Actor occupations in relation with the {persona}\'s persona.'},
+                {'title': f'Top 20 Actor occupations in relation with the {persona}\'s persona.'}, # Update the title of the graph in function of the new persona selected.
             ]
         } for persona in personas
     ]
@@ -105,7 +105,7 @@ def create_relation_graph_personas_occupations():
                 'direction': 'down',
                 'showactive': True,
                 'active': 0,
-                'x': 0.5,
+                'x': 1,
                 'xanchor': 'left',
                 'y': 1.15,
                 'yanchor': 'top',
