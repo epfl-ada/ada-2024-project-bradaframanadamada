@@ -109,7 +109,7 @@ def create_actor_nationalities_success_relation_graph(with_actor_count_weight):
         actor_count = ("freebase_id", "count")
     ).reset_index()
 
-    # Normalize the actor count (from o to 1) to be able to realize a score that take into account both the mean popularity score and the actor count
+    # Normalize the actor count (from 0 to 1) to be able to realize a score that take into account both the mean popularity score and the actor count
     max_actor_count = nationality_stats["actor_count"].max()
     min_actor_count = nationality_stats["actor_count"].min()
     nationality_stats["normalized_actor_count"] = (nationality_stats["actor_count"] - min_actor_count) / (max_actor_count - min_actor_count)
