@@ -44,7 +44,9 @@ def create_distance_matrix(summed_personas):
     return m
 
 if __name__ == '__main__':
-    df = pd.read_pickle('../data/clean_careers_paths.pkl')
+    df_paths = pd.read_pickle('../data/clean_careers_paths.pkl')
+    df_success = pd.read_csv('../data/actors_success.csv')
+    df = df_paths.reset_index()[['Actor name','personas_list', 'freebase_actor_id']].merge(df_success[['freebase_actor_id', 'score']])
     df['vectorized_personas'] = (df['personas_list'].apply(lambda personas_list: np.array(vecorize_personas_list(GOOD_PERSONAS, personas_list))))
     df['summed_personas'] = df['vectorized_personas'].apply(sum_vectorized_personas)
     matrix = create_distance_matrix(df['summed_personas'])
