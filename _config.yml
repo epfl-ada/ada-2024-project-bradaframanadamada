@@ -1,0 +1,16 @@
+theme: jekyll-theme-minimal
+title: What characteristics make an actor's career successful ?
+description: The main goal of our analysis is to understand the factors that define a successful actor's career, 
+  focusing on career paths, role choices, and the film in which the actor chooses to appear. We will first try 
+  to find the possible career path of an actor and the different stages of his career according to the character 
+  type and the role of this character that an actor has played and the genre he has played in. We will then try 
+  to understand which actor's career/ career path is successful by analysing the budgets of the films where the 
+  actor has played in and the opinion of the spectator on a film. We will study the awards that a film or an actor 
+  obtains in different categories or world regions to analyse the impact of an actor in the cinematographic community. 
+  Finally, we will study if the academic part, the family or the nationality of an actor can play a role in the success
+  of an actor's career.
+show_description: False
+show_downloads: True
+navigation:
+  - title: Home
+    url: /data_stories.md
