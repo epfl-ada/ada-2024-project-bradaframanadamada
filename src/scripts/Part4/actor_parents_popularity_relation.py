@@ -178,7 +178,7 @@ def create_graph_actors_with_parents_popularity_correlation():
         y=actor_wikidata['overall_score_actor'],
         mode='markers',
         name='Overall Score',
-        marker_color='red',
+        marker_color='green',
         text=actor_wikidata['actor_name'],
         customdata=actor_wikidata['parent'],
         hovertemplate=(
