@@ -259,13 +259,13 @@ permalink: /
     into account their popularity, which might not reflect the quality of the university.<br>
 </p>
 
-<iframe src="src/graphs/actors_universities_popularity_realtions_with_weight_0.html" width="1200" height="800"></iframe>
+<iframe src="src/graphs/actors_universities_popularity_relations_with_weight_0.html" width="1200" height="800"></iframe>
 
-<iframe src="src/graphs/actors_universities_popularity_realtions_with_weight_0.25.html" width="1200" height="800"></iframe>
+<iframe src="src/graphs/actors_universities_popularity_relations_with_weight_0.25.html" width="1200" height="800"></iframe>
 
-<iframe src="src/graphs/actors_universities_popularity_realtions_with_weight_0.5.html" width="1200" height="800"></iframe>
+<iframe src="src/graphs/actors_universities_popularity_relations_with_weight_0.5.html" width="1200" height="800"></iframe>
 
-<iframe src="src/graphs/actors_universities_popularity_realtions_with_weight_0.75.html" width="1200" height="800"></iframe>
+<iframe src="src/graphs/actors_universities_popularity_relations_with_weight_0.75.html" width="1200" height="800"></iframe>
 
 <p style="flex: 1; text-align: justify">
     TO BE COMPLETED
