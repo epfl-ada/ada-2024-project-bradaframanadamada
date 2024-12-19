@@ -6,6 +6,12 @@ permalink: /
 
 # Defining Success in Acting: Analysing Career Paths, Role Choices, and Film Impact
 
+# Introduction
+
+<p style="flex: 1; text-align: justify">
+    TO BE COMPLETED
+</p>
+
 # How can we define a good actor's performance based on the film’s success he performed in ?
 
 ## Analyzing Actors’ Films by Ratings and Votes
@@ -102,7 +108,7 @@ permalink: /
     </figure>
 </div>
 
-<iframe src="src/graphs/personas_characters_occupations_relations_graph_interactive.html" width="1200" height="800"></iframe>
+<p align="center"><iframe src="src/graphs/personas_characters_occupations_relations_graph_interactive.html" width="1200" height="800"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     - The <b>warrior</b> persona is primarily linked to occupations such as <b>vigilante</b>, <b>swordfighter</b>, 
@@ -167,7 +173,7 @@ permalink: /
     </figure>
 </div>
 
-<iframe src="src/graphs/personas_actors_occupations_relations_graph_interactive.html" width="1200" height="800"></iframe>
+<p align="center"><iframe src="src/graphs/personas_actors_occupations_relations_graph_interactive.html" width="1200" height="800"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     The personas <b>the orphan</b>, <b>the ruler</b>, <b>the warrior</b>, <b>the seducer</b>, <b>the lover</b>, 
@@ -225,7 +231,7 @@ permalink: /
     one parent who is also an actor.
 </p>
 
-<iframe src="src/graphs/actors_parents_number_distribution.html" width="1200" height="800"></iframe>
+<p align="center"><iframe src="src/graphs/actors_parents_number_distribution.html" width="1200" height="800"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     In addition to the graph, the majority of actors (48,438) defined in our analysis do not have at least one parent in 
@@ -240,7 +246,7 @@ permalink: /
     of the opinion score and award score) using the picker in the top-right corner of the graph.
 </p>
 
-<iframe src="src/graphs/actors_parents_popularity_correlation.html" width="1200" height="800"></iframe>
+<p align="center"><iframe src="src/graphs/actors_parents_popularity_correlation.html" width="1200" height="800"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     Now, we can see on the graph that some actors, such as Angelina Jolie, who have a very famous parent Jon Voight, are 
@@ -273,7 +279,7 @@ permalink: /
     and you can see the distribution of the number of actor spouses in the graph below.    
 </p>
 
-<iframe src="src/graphs/actors_spouses_number_distribution.html" width="1200" height="800"></iframe>
+<p align="center"><iframe src="src/graphs/actors_spouses_number_distribution.html" width="1200" height="800"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     We can see that there is also a significant number of actors (4,057) who have had one actor spouse during their career. 
@@ -285,7 +291,7 @@ permalink: /
     of the opinion score and award score) using the picker in the top-right corner of the graph.
 </p>
 
-<iframe src="src/graphs/actors_spouses_popularity_correlation.html" width="1200" height="800"></iframe>
+<p align="center"><iframe src="src/graphs/actors_spouses_popularity_correlation.html" width="1200" height="800"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     On the graph, we can see that there are not many actors who are very popular in relation to their spouse. However, 
@@ -310,7 +316,7 @@ permalink: /
     number of actors. 
 </p>
 
-<iframe src="src/graphs/actors_universities_count_distribution.html" width="1200" height="800"></iframe>
+<p align="center"><iframe src="src/graphs/actors_universities_count_distribution.html" width="1200" height="800"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     We can observe that many actors have attended American universities. Los Angeles (even though it is not directly a university), 
@@ -330,13 +336,13 @@ permalink: /
     into account their popularity, which might not reflect the quality of the university.<br>
 </p>
 
-<iframe src="src/graphs/actors_universities_popularity_relations_with_weight_0.html" width="1200" height="800"></iframe>
+<p align="center"><iframe src="src/graphs/actors_universities_popularity_relations_with_weight_0.html" width="1200" height="800"></iframe></p>
 
-<iframe src="src/graphs/actors_universities_popularity_relations_with_weight_0.25.html" width="1200" height="800"></iframe>
+<p align="center"><iframe src="src/graphs/actors_universities_popularity_relations_with_weight_0.25.html" width="1200" height="800"></iframe></p>
 
-<iframe src="src/graphs/actors_universities_popularity_relations_with_weight_0.5.html" width="1200" height="800"></iframe>
+<p align="center"><iframe src="src/graphs/actors_universities_popularity_relations_with_weight_0.5.html" width="1200" height="800"></iframe></p>
 
-<iframe src="src/graphs/actors_universities_popularity_relations_with_weight_0.75.html" width="1200" height="800"></iframe>
+<p align="center"><iframe src="src/graphs/actors_universities_popularity_relations_with_weight_0.75.html" width="1200" height="800"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     TO BE COMPLETED
@@ -351,7 +357,7 @@ permalink: /
     The bar chart below shows the distribution of the number of actors by nationality.
 </p>
 
-<iframe src="src/graphs/actors_nationalities_count_distribution.html" width="1200" height="800"></iframe>
+<p align="center"><iframe src="src/graphs/actors_nationalities_count_distribution.html" width="1200" height="800"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     We can see on the graph that the most representative nationality is the United States, with 17,921 actors, followed 
@@ -373,11 +379,11 @@ permalink: /
     is equal in all the countries of their nationalities.
 </p>
 
-<iframe src="src/graphs/actors_nationalities_popularity_relations_with_weight_0.25.html" width="1200" height="800"></iframe>
+<p align="center"><iframe src="src/graphs/actors_nationalities_popularity_relations_with_weight_0.25.html" width="1200" height="800"></iframe></p>
 
-<iframe src="src/graphs/actors_nationalities_popularity_relations_with_weight_0.5.html" width="1200" height="800"></iframe>
+<p align="center"><iframe src="src/graphs/actors_nationalities_popularity_relations_with_weight_0.5.html" width="1200" height="800"></iframe></p>
 
-<iframe src="src/graphs/actors_nationalities_popularity_relations_with_weight_0.75.html" width="1200" height="800"></iframe>
+<p align="center"><iframe src="src/graphs/actors_nationalities_popularity_relations_with_weight_0.75.html" width="1200" height="800"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     TO BE COMPLETED
@@ -392,7 +398,7 @@ permalink: /
     or uniquely in foreign countries.
 </p>
 
-<iframe src="src/graphs/actors_count_who_played_in_their_country.html" width="1200" height="800"></iframe>
+<p align="center"><iframe src="src/graphs/actors_count_who_played_in_their_country.html" width="1200" height="800"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     We can see that most of the actor doesn't have performed in their country which indicates that must have to travel 
@@ -400,7 +406,7 @@ permalink: /
     TO BE COMPLETED
 </p>
 
-<iframe src="src/graphs/actors_performance_own_foreign_country_performance_distribution.html" width="1200" height="800"></iframe>
+<p align="center"><iframe src="src/graphs/actors_performance_own_foreign_country_performance_distribution.html" width="1200" height="800"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     TO BE COMPLETED
