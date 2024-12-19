@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: custom_layout
 title: Data Story
 permalink: /
 ---
