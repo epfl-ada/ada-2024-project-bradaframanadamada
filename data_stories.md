@@ -154,7 +154,7 @@ permalink: /
     one parent who is also an actor.
 </p>
 
-<iframe src="src/graphs/actors_parents_number_distribtion.html" width="1200" height="800"></iframe>
+<iframe src="src/graphs/actors_parents_number_distribution.html" width="1200" height="800"></iframe>
 
 <p style="flex: 1; text-align: justify">
     In addition to the graph, the majority of actors (48,438) defined in our analysis do not have at least one parent in 
@@ -172,15 +172,6 @@ permalink: /
 <iframe src="src/graphs/actors_parents_popularity_correlation.html" width="1200" height="800"></iframe>
 
 <p style="flex: 1; text-align: justify">
-    In complement of the graph, the correlation for the popularity score obtained from the <b>public's opinion</b> 
-    (extracted from Part 1) between the actor and their parent is 0.113. This means that the actor's popularity is very 
-    slightly influenced by their parent’s <b>opinion score</b> popularity, as the covariance is very close to 0 this 
-    influence is very not important. We observe the same pattern for the <b>award popularity score</b>(correlation : 0.074) and the 
-    <b>overall score</b> (correlation: 0.080). Even though the influence is slightly smaller in these cases, since the correlation score is 
-    more small. This is particularly evident for the overall score, as it is calculated using a combination of 
-    the opinion and award scores. Therefore, while there is a small positive relationship along all the popularity score, 
-    it is not significant enough to conclude that the actor's popularity is heavily dependent on the popularity of their 
-    parents.<br><br>
     Now, we can see on the graph that some actors, such as Angelina Jolie, who have a very famous parent Jon Voight, are 
     also very famous themselves. These actors appear in the top-right corner of the graph, where both the actor's and parent's 
     popularity scores are high.<br><br>
@@ -192,4 +183,160 @@ permalink: /
     to their experience and knowledge of the cinematic field. Even if this influence is not evident in terms of popularity 
     scores, it might still have an impact on the actor's career. These actors are present along the x-axis and there is a 
     lot of actors in this case.<br><br>
+    In complement of the graph, the correlation for the popularity score obtained from the <b>public's opinion</b> 
+    (extracted from Part 1) between the actor and their parent is <b>0.113</b>. This means that the actor's popularity is very 
+    slightly influenced by their parent’s <b>opinion score</b> popularity, as the covariance is very close to 0 this 
+    influence is very not important. We observe the same pattern for the <b>award popularity score</b>(correlation : <b>0.074</b>) and the 
+    <b>overall score</b> (correlation: <b>0.080</b>). Even though the influence is slightly smaller in these cases, since the correlation score is 
+    more small. This is particularly evident for the overall score, as it is calculated using a combination of 
+    the opinion and award scores. Therefore, while there is a small positive relationship along all the popularity score, 
+    it is not significant enough to conclude that the actor's popularity is heavily dependent on the popularity of their 
+    parents.<br><br>
+</p>
+
+### Spouses relations
+<p style="flex: 1; text-align: justify">
+    During their careers, actors can have one or more relationships with other actors. It could be interesting to study 
+    these relationships and determine if they have an impact on the actor's popularity. The majority of actors (45,308) 
+    do not have any relationships with other actors. However, many others have at least one relationship during their careers, 
+    and you can see the distribution of the number of actor spouses in the graph below.    
+</p>
+
+<iframe src="src/graphs/actors_spouses_number_distribution.html" width="1200" height="800"></iframe>
+
+<p style="flex: 1; text-align: justify">
+    We can see that there is also a significant number of actors (4,057) who have had one actor spouse during their career. 
+    Additionally, there are actors who have had 2, 3, 4, or even 5 actor spouses during their careers. We will now attempt 
+    to understand if there is a link or correlation between the actor's popularity and the popularity of their spouse(s).<br><br>
+    You can see below an interactive scatter plot that present the relationship between an actor's popularity and one of their spouse's 
+    popularity. You can select the type of popularity score used to compare the two popularities: the <b>opinion score</b> 
+    (extracted from Part 1), the <b>award score</b> (extracted from Part 2), and the <b>overall score</b> (a combination 
+    of the opinion score and award score) using the picker in the top-right corner of the graph.
+</p>
+
+<iframe src="src/graphs/actors_spouses_popularity_correlation.html" width="1200" height="800"></iframe>
+
+<p style="flex: 1; text-align: justify">
+    On the graph, we can see that there are not many actors who are very popular in relation to their spouse. However, 
+    there are some notable cases, such as the relationship between Angelina Jolie and Brad Pitt, as well as the relationship 
+    between Tom Cruise and Nicole Kidman, displayed in the top right corner.<br><br>
+    Most of the actors are located along the x and y axes, indicating that one member of the couple is a more popular 
+    actor than the other.<br><br>
+    In complement to the graph, the correlation of the <b>opinion score</b> between the actor and their spouse is 
+    <b>0.184</b> which is approximately twice as high as the correlation with their parent. This suggests that having a 
+    relationship with a popular actor could have a small impact (since the correlation is still relatively small) on the 
+    actor's popularity. We can make the same observation for the <b>award score</b> (correlation: <b>0.150</b>) and the 
+    <b>overall score</b>(correlation: <b>0.140</b>). Although the influence is small, similar to the case with parents, 
+    it is still more important in the case of spouses.<br><br>
+</p>
+
+## Academic Background
+<p style="flex: 1; text-align: justify">
+    In our data, a large number of actors (around 20,000) have attended university courses. It could be interesting to 
+    study which universities have produced the largest number of actors and which ones have produced the most successful 
+    or popular actors.<br><br>
+    You can see on the bar chart bellow the distribution of the number of actors in the top 20 universities with the highest 
+    number of actors. 
+</p>
+
+<iframe src="src/graphs/actors_universities_count_distribution.html" width="1200" height="800"></iframe>
+
+<p style="flex: 1; text-align: justify">
+    We can observe that many actors have attended American universities. Los Angeles (even though it is not directly a university), 
+    the University of California, and the Royal Academy of Dramatic Art(England) are the institutions with the highest number 
+    of actor students. We will now consider the popularity of actor students who attended these institutions to evaluate 
+    whether studying at these universities increases an actor's chances of becoming popular.<br><br>
+    Below, you can see interactive scatter plots that show the relationship between the popularity of actor from 
+    a given university and the university itself. You can select the type of popularity score used to evaluate an actor's 
+    popularity: the <b>opinion score</b> (extracted from Part 1), the <b>award score</b> (extracted from Part 2), and the 
+    <b>overall score</b> (a combination of the opinion score and award score), using the picker in the top-right corner of the graph.<br><br>
+    The <b>weight parameter</b> represents the weight applied in the calculation of the university score, defined as:<br><br>
+    <b>University Score = (1 - Weight) × Mean Popularity Score of actors in this university + Weight × Number of students in this university.</b><br><br>
+    The best university will have a university score close to one, representing the university most likely to produce popular actors.<br>
+    - If we apply a <b>weight of one</b>, the calculation is based uniquely on the mean popularity score of actors, which may not be ideal 
+    since a university with only two actors could achieve a high score without having a huge number of actors students.<br>
+    - In opposition, if the weight is zero, the university score depends entirely on the number of students, without taking 
+    into account their popularity, which might not reflect the quality of the university.<br>
+</p>
+
+<iframe src="src/graphs/actors_universities_popularity_realtions_with_weight_0.html" width="1200" height="800"></iframe>
+
+<iframe src="src/graphs/actors_universities_popularity_realtions_with_weight_0.25.html" width="1200" height="800"></iframe>
+
+<iframe src="src/graphs/actors_universities_popularity_realtions_with_weight_0.5.html" width="1200" height="800"></iframe>
+
+<iframe src="src/graphs/actors_universities_popularity_realtions_with_weight_0.75.html" width="1200" height="800"></iframe>
+
+<p style="flex: 1; text-align: justify">
+    TO BE COMPLETED
+</p>
+
+## Nationality impact
+
+<p style="flex: 1; text-align: justify">
+    Actors come from all over the world, and some have more than one nationality. It would be interesting to identify the 
+    most representative nationalities in the acting profession, determine which nationality has the highest number of popular 
+    actors, and explore whether a particular nationality could influence an actor's popularity.<br><br>
+    The bar chart below shows the distribution of the number of actors by nationality.
+</p>
+
+<iframe src="src/graphs/actors_nationalities_count_distribution.html" width="1200" height="800"></iframe>
+
+<p style="flex: 1; text-align: justify">
+    We can see on the graph that the most representative nationality is the United States, with 17,921 actors, followed 
+    by the United Kingdom with 5,393 actors and India with 2,525 actors. The United States is by far the dominant nationality, 
+    likely explained by the presence of Hollywood. We will now study which nationality contains the most popular actors<br><br>.
+    Below, you can see interactive scatter plots that show the relationship between the popularity of actor with 
+    a given nationality and the nationality itself. You can select the type of popularity score used to evaluate an actor's 
+    popularity: the <b>opinion score</b> (extracted from Part 1), the <b>award score</b> (extracted from Part 2), and the 
+    <b>overall score</b> (a combination of the opinion score and award score), using the picker in the top-right corner of the graph.<br><br>
+    The <b>weight parameter</b> represents the weight applied in the calculation of the nationality score, defined as:<br><br>
+    <b>Nationality Score = (1 - Weight) × Mean Popularity Score of actors with the given nationality + Weight × Number of students 
+    with the given nationality.</b><br><br>
+    The best nationality will have a nationality score close to one, representing the nationality most likely to have popular actors.<br>
+    - If we apply a <b>weight of one</b>, the calculation is based uniquely on the mean popularity score of actors, which may not be ideal 
+    since a nationality with only two actors could achieve a high score without having a huge number of actors (Ex: Gabon).<br>
+    - In opposition, if the weight is zero, the nationality score depends entirely on the number of actors, without taking 
+    into account their popularity, which might not reflect the influence of a nationality in actor's popularity.<br>
+    For our analysis, we split actors with more than one nationality into multiple rows, considering that their influence 
+    is equal in all the countries of their nationalities.
+</p>
+
+<iframe src="src/graphs/actors_nationalities_popularity_relations_with_weight_0.25.html" width="1200" height="800"></iframe>
+
+<iframe src="src/graphs/actors_nationalities_popularity_relations_with_weight_0.5.html" width="1200" height="800"></iframe>
+
+<iframe src="src/graphs/actors_nationalities_popularity_relations_with_weight_0.75.html" width="1200" height="800"></iframe>
+
+<p style="flex: 1; text-align: justify">
+    TO BE COMPLETED
+</p>
+
+## Perform in their own country or pursue performing abroad ?
+
+<p style="flex: 1; text-align: justify">
+    After studying the impact of nationality on actors, it could be interesting to see if actors perform exclusively in 
+    their own country or if they perform in foreign countries.<br><br> 
+    The graph below presents the distribution of actors based on whether they perform in their own country in their career 
+    or uniquely in foreign countries.
+</p>
+
+<iframe src="src/graphs/actors_count_who_played_in_their_country.html" width="1200" height="800"></iframe>
+
+<p style="flex: 1; text-align: justify">
+    We can see that most of the actor doesn't have performed in their country which indicates that must have to travel 
+    abroad to purchase their actor's career. 
+    TO BE COMPLETED
+</p>
+
+<iframe src="src/graphs/actors_performance_own_foreign_country_performance_distribution.html" width="1200" height="800"></iframe>
+
+<p style="flex: 1; text-align: justify">
+    TO BE COMPLETED
+</p>
+
+# Conclusion
+
+<p style="flex: 1; text-align: justify">
+    TO BE COMPLETED
 </p>
