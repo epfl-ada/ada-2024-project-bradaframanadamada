@@ -208,7 +208,7 @@ def create_actor_studies_success_relation_graph(with_actor_count_weight):
         )],
         height = 800,  # to see all the universities
         # add legends to the graph.
-        title = "Top 20 Universities by Actor Popularity Scores",
+        title = f"Top 20 Universities with the most important University Score with a weight of {with_actor_count_weight})",
         xaxis_title = "Score",
         yaxis_title = "University",
         template = "plotly_white",
