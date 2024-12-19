@@ -50,12 +50,16 @@ def create_movie_ratings_with_actors_graph():
         title="Number of Votes vs. Average Rating by Movie"
     )
 
-    first = True
+    # only display the top 5 actor by default
+    i = 0
+    top5index = ratings_graph_data.drop_duplicates(subset='freebase_actor_id', keep='first').reset_index()
+    top5index = top5index[top5index['freebase_actor_id']
+        .isin(actor_votes.head(5)['freebase_actor_id'])].index.tolist()
 
     for scat in fig.data:
-        if not first:
+        if i not in top5index:
             scat.visible = "legendonly"
-        first = False
+        i+= 1
 
     # Save graph to an HTML file
     # fig.write_html("src/graphs/actor_movies_rating_graph.html")
