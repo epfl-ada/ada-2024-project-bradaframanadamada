@@ -219,9 +219,7 @@ def create_actor_nationalities_success_relation_graph(with_actor_count_weight):
         )],
         height=800,  # to be sure to see all the nationalities
         # add legends to the graph.
-        title=f"Top 20 Nationalities with the most important weighted score(obtained as combination of the mean of \n "
-              f"the actor's popularity score and the nuzmber of actor count in the nationality categorie with an \n"
-              f"important weight of {with_actor_count_weight})",
+        title=f"Top 20 Nationalities with the most important Nationality Score with a weight of {with_actor_count_weight})",
         xaxis_title="Weighted score",
         yaxis_title="Nationality",
         template="plotly_white",

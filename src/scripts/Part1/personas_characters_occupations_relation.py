@@ -126,6 +126,7 @@ def create_relation_graph_personas_characters_occupations():
         xaxis_tickangle=-45,
         hovermode='closest',
         height=800,
+        template="plotly_white",
         updatemenus=[
             {
                 'buttons': dropdown_personas_selection,
