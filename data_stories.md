@@ -4,9 +4,82 @@ title: Data Story
 permalink: /
 ---
 
+# Defining Success in Acting: Analysing Career Paths, Role Choices, and Film Impact
+
+# How can we define a good actor's performance based on the film’s success he performed in ?
+
+## Analyzing Actors’ Films by Ratings and Votes
+
+<div style="display:flex; align-items: center;">
+    <p style="flex: 1; text-align: justify">
+        This graph explores the relationship between IMDb ratings and the number of votes for films featuring
+        selected actors. By focusing on these metrics, we examine trends in audience engagement and critical 
+        acclaim across their filmographies, highlighting how popular and well-received their performances are.<br><br>
+        Below, you can see a scatter plot of the filmography of the top 250 actors. The top 5 actors (Samuel 
+        L.Jackson, Morgan Freeman, Tom Hanks, Brad Pitt and Hugo Weaving) are already selected. You can select or
+        deselect actors by clicking on their name or double click to select them all or only one.
+    </p>
+    <figure>
+        <img src="src/image/films_rating_with_actors_chatGPT.webp" width="200" height="200">
+        <figcaption style="text-align: center"> Generated using AI</figcaption>
+    </figure>
+</div>
+
+<p align="center"><iframe src="src/graphs/actor_movies_rating_graph.html" width="1200" height="800" ></iframe></p>
+
+<p style="flex: 1; text-align: justify">
+    Here, we will focus on successful actors such as Samuel L.Jackson, Morgan Freeman, Tom Hanks, Brad Pitt and 
+    Hugo Weaving. While observing their filmography, we notice a trend where a high number of votes correlates with 
+    higher average ratings. Furthermore, many of the most popular films featuring these actors also tend to accumulate
+    a high number of votes.<br><br>
+    Now, consider Jurassic Park and Star Wars Episode I: The Phantom Menace. Both films have a similar number of votes
+    and box office earnings (approximately $915 million and $1 billion, respectively). However, their ratings 
+    differ significantly: 8.2 for Jurassic Park versus 6.5 for The Phantom Menace. Similarly, The Lord of the Rings 
+    trilogy have a comparable box office revenue to these films while having a higher average ratings and a larger 
+    number of votes.
+</p>
+
+## Comparing Ratings, Votes, Box Office, and Budget
+
+<div style="display:flex; align-items: center;">
+    <p style="flex: 1; text-align: justify">
+        This graph explores the financial and critical aspects of film success, incorporating box 
+        office revenue and budget alongside ratings and votes. By analyzing these combined factors, we aim to 
+        highlight patterns that connect a film’s financial performance with its critical success.<br><br>
+        Below, you can see a scatter plot of all the films with a defined average rating, number of vote, budget and 
+        box office revenue. You can zoom in by selecting the area or zoom out by double clicking. You can also
+        move by clicking on the arrows named plan on the top right of the graph.
+    </p>
+    <figure>
+        <img src="src/image/films_audience_score_and_box_office.webp" width="200" height="200">
+        <figcaption style="text-align: center"> Generated using AI</figcaption>
+    </figure>
+</div>
+
+<p align="center"><iframe src="src/graphs/movies_budget_revenue_ratings_graph.html" width="1200" height="800"></iframe></p>
+
+<p style="flex: 1; text-align: justify">
+    In this representation, we observe that a high budget and high ratings do not always guarantee a high box office.
+    For example, The Dark Knight, while critically acclaimed on IMDB, achieved less than half the box office revenue 
+    of Avatar, Titanic and The avengers. On the other hand, the Pirates of the Caribbean series features a very high 
+    budget with a high box office but movies with significantly less budget managed to gain comparable box office 
+    revenue.<br><br>
+    As we saw, a high budget does not necessarily correlate with high box office revenue. for instance, Star 
+    Wars Episode IV: A New Hope has a budget of $11 million but earned $775 million at the box office. Similarly, 
+    The Lord of the Rings trilogy with each a budget of around $90 million and each generated around $1 billion in 
+    box office revenue. Meanwhile, the films with the highest box office revenues are in the $200-250 millions range.
+    Some of the most critically acclaimed titles such as The Lord of the Rings trilogy, Inception and The Dark Knight
+    performed well in box office revenue, but they still did not beat the top films box office revenue.<br><br>
+    Conversely, some critically acclaimed films like Pulp Fiction, The Godfather and The Shawshank Redemption 
+    have relatively small budgets and box office revenues. This underlines the notion that a film's success can be 
+    independent of its budget and box office revenue. Using the number of votes can help identify successful films. 
+    By only using the number of votes, we can highlight critically acclaimed films and the actors that performed 
+    in them, without using the box office revenue and budget.
+</p>
+
 # What characteristics make an actor’s career successful ?
 
-## Are the founded personas relevant ? Relationship between a persona and the character occupation played by an actor in a movie
+## Are the personas found relevant ? Relationship between a persona and the character occupation played by an actor in a movie
 
 
 <div style="display:flex; align-items: center;">
@@ -140,8 +213,6 @@ permalink: /
 </p>
 
 # What are the possible career paths, steps and possible trajectories ?
-<iframe src="src/graphs//actor_movies_rating_graph.html" width="1200" height="800"></iframe>
-<iframe src="src/graphs/movies_budget_revenue_ratings_graph.html" width="1200" height="800"></iframe>
 
 # Does the academic and environmental background of an actor have an impact on his career success ?
 
