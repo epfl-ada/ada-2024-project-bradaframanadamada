@@ -130,7 +130,7 @@ def create_actor_nationalities_success_relation_graph(with_actor_count_weight):
             + nationality_stats["normalized_actor_count"] * with_actor_count_weight
     )
 
-    # Extract the top 20 universities for each score type
+    # Extract the top 20 nationalities for each score type
     sorted_opinion_score = nationality_stats.sort_values(by="weighted_mean_opinion_score", ascending=False).head(20)
     sorted_award_score = nationality_stats.sort_values(by="weighted_mean_award_score", ascending=False).head(20)
     sorted_overall_score = nationality_stats.sort_values(by="weighted_mean_overall_score", ascending=False).head(20)
