@@ -6,6 +6,75 @@ permalink: /
 
 # What characteristics make an actor’s career successful ?
 
+## Are the founded personas relevant ? Relationship between a persona and the character occupation played by an actor in a movie
+
+
+<div style="display:flex; align-items: center;">
+    <p style="flex: 1; text-align: justify">
+        We have extracted only a relatively small proportion of occupations per characters originally. As a result, 
+        this part doesn't represent a major part of our analysis. However, they provide an interesting opportunity 
+        to validate the personas previously extracted using an LLM. By linking characters' occupations to their 
+        assigned personas, we can evaluate the relevance of the personas extracted from film summaries by comparing 
+        them to the occupations list of the characters. We can also argue that the characters with a defined list of 
+        occupations are likely the most popular, as the occupations list was retrieved from Wikidata. It is reasonable 
+        to assume that only the more popular characters are documented on Wikidata.<br><br>
+        Below, you can see an interactive bar chart displaying the distribution of the Top-20 most frequent character 
+        occupations for each of the 12 personas defined in our analysis. You can use the picker located in the top-right 
+        corner of the graph to select the persona for which you want to display the top 20 most common character occupations 
+        associated with it.
+    </p>
+    <figure>
+        <img src="src/image/persona_character_relation_chatGPT.jpg" width="350" height="200">
+        <figcaption style="text-align: center"> Generated using AI</figcaption>
+    </figure>
+</div>
+
+<iframe src="src/graphs/personas_characters_occupations_relations_graph_interactive.html" width="1200" height="800"></iframe>
+
+<p style="flex: 1; text-align: justify">
+    - The <b>warrior</b> persona is primarily linked to occupations such as <b>vigilante</b>, <b>swordfighter</b>, 
+    <b>superhero</b>, <b>soldier</b>, <b>martial artist</b> and <b>private investigator</b>. These are common attributes 
+    and professions associated with the <b>warrior</b> persona.<br><br>
+    - The <b>rebel</b> persona, on the other hand, is more closely linked to darker occupations such as <b>serial killer</b>,
+    <b>mass murderer</b>, <b>terrorist</b> and <b>spy</b>. However, it is also associated with more heroic professions like 
+    <b>superhero</b>, <b>vigilante</b>, and <b>swordfighter</b>, which may represent anti-hero or versatile roles.<br><br>
+    - The <b>joker</b> persona is most strongly linked to occupations like <b>handyman</b> and <b>swordfighter</b>, with 
+    additional occupations that don't have a direct connection to humor. This makes it difficult to fully evaluate the 
+    relevance of the <b>joker</b> persona affectation.<br><br>
+    - The <b>caregiver</b> persona is also associated with occupations that are not directly linked to the healthcare 
+    field. However, we can also define the <b>caregiver</b> persona has a character who assist the main character in his 
+    quest. Occupations like <b>superhero</b>, <b>vigilante</b>, or <b>reporter</b> (in the case of police films) fit this 
+    definition, as they represent occupations that often help the main characters in his quest.<br><br>
+    - The <b>ruler</b> persona is associated with negative occupations like <b>terrorist</b>, <b>serial killer</b> and 
+    <b>mass murderer</b>, which could align with the representation of a villainous leader commonly seen in films. It is 
+    also linked to more traditional leadership roles such as <b>chief executive officer</b>, <b>ruler</b>, <b>crime boss</b> 
+    or <b>monarch</b>.<br><br>
+    - The <b>mentor</b> persona is strongly associated with occupations that play significant roles in the storyline, such 
+    as <b>private investigator</b>, <b>vigilante</b>, <b>martial artist</b>, <b>detective</b> and <b>superhero</b>. This 
+    makes sense, as the <b>mentor</b> persona often holds an important position in the narrative, who is guiding or forming 
+    another important character.<br><br>
+    - The <b>lover</b> persona is linked to occupations like <b>high school student</b>, <b>reporter</b>, and <b>student</b>, 
+    which are common in romantic films. It is also associated with dominant film roles such as <b>swordfighter</b>, <b>vigilante</b>, 
+    <b>superhero</b> and <b>martial artist</b>, which complement the <b>lover</b> persona since these role represent 
+    dominant characters.<br><br>
+    - The <b>seducer</b> persona is associated with darker roles such as <b>serial killer</b> or <b>murderer</b>, explained 
+    by the manipulative traits present in these roles, which is coherent with the <b>seducer</b> persona. It is also linked 
+    to more dominant personas like <b>soldier</b>, <b>superhero</b>, and <b>actor</b>, which makes sense as these characters
+    may represent desirable traits.<br><br>
+    - The <b>magician</b> persona is connected to occupations like <b>magician</b>, <b>crime boss</b>, <b>alchemist</b> and
+    <b>chemist</b>, highlighting the relevance of the persona's traits. In the same time, it is also associated with darker 
+    occupations like <b>serial killer</b>, <b>criminal</b> and <b>terrorist</b>. This suggests that magicians are often 
+    represented as characters with darker aspects.<br><br>
+    - It is challenging to fully evaluate the relevance of the <b>orphan</b> persona, even it is linked to occupations like 
+    <b>student</b> and <b>soldier</b> roles often performed by orphaned characters in movies.<br><br>
+    - The <b>creator</b> persona is linked to a broad range of occupations, many of which are connected to the innovative 
+    field, such as <b>inventor</b>, <b>scientist</b> and <b>writer</b>.
+    - The <b>child</b> persona is predominantly associated with occupations like <b>schoolchild</b> and <b>student</b>, 
+    which is appropriate for this role.<br><br>
+    Overall, most personas show their relevance through this analysis, even though the <b>joker</b> persona is harder 
+    to evaluate due to the lack of direct occupations linked to humor.<br><br>
+</p>
+
 ## The Diversity in the actors occupations/professions. 
 <div style="display:flex; align-items: center;">
     <p style="flex: 1; text-align: justify">
@@ -74,7 +143,5 @@ permalink: /
 
 
 # What are the possible career paths, steps and possible trajectories ?
-
-<iframe src="src/graphs/personas_characters_occupations_relations_graph_interactive.html" width="1200" height="800"></iframe>
 <iframe src="src/graphs//actor_movies_rating_graph.html" width="1200" height="800"></iframe>
 <iframe src="src/graphs/movies_budget_revenue_ratings_graph.html" width="1200" height="800"></iframe>
