@@ -12,7 +12,7 @@ def create_actor_nationalities_count_distribution():
     This function creates an interactive bar chart to display the number of actor distribution by nationalities.
     """
     # Load the dataset that contains wikidata infos of the actors
-    actors_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv")
+    actors_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv", quotechar='"')
     # Only extract the actor name, the actor freebase ID and the nationalities columns from the data
     actors_wikidata = actors_wikidata[["actor_name", "freebase_id", "nationality_lst"]]
     # Transform the nationalities column into list
@@ -69,7 +69,7 @@ def create_actor_nationalities_success_relation_graph(with_actor_count_weight):
         actor count per nationality category.
     """
     # Load the dataset that contains wikidata infos of the actors
-    actors_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv")
+    actors_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv", quotechar='"')
     # Only extract the actor name, the actor freebase ID and the nationalities columns from the data
     actors_wikidata = actors_wikidata[["actor_name", "freebase_id", "nationality_lst"]]
     # Transform the nationalities column into list
