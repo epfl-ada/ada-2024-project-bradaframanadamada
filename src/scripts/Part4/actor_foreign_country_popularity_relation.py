@@ -10,7 +10,7 @@ def count_number_of_actors_who_played_in_their_country():
     # load the CMU data
     cmu_df = pd.read_pickle("src/data/metadata_cmu.pkl")
     # load the actor wikidata
-    actor_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv")
+    actor_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv", quotechar='"')
 
     # combine the actor's wikidata with the CMU dataframe.
     join_actor_wikidata_CMU = cmu_df.merge(actor_wikidata, left_on='Freebase actor ID', right_on='freebase_id', how='inner')
@@ -68,7 +68,7 @@ def actors_performance_own_foreign_country_performance_distribution(with_actor_c
     # load the CMU data
     cmu_df = pd.read_pickle("src/data/metadata_cmu.pkl")
     # load the actor wikidata
-    actor_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv")
+    actor_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv", quotechar='"')
 
     # combine the actor's wikidata with the CMU dataframe.
     join_actor_wikidata_CMU = cmu_df.merge(actor_wikidata, left_on='Freebase actor ID', right_on='freebase_id', how='inner')
