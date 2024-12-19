@@ -139,9 +139,57 @@ permalink: /
     adaptability to convincingly represent young characters.<br><br>
 </p>
 
-
-
-
 # What are the possible career paths, steps and possible trajectories ?
 <iframe src="src/graphs//actor_movies_rating_graph.html" width="1200" height="800"></iframe>
 <iframe src="src/graphs/movies_budget_revenue_ratings_graph.html" width="1200" height="800"></iframe>
+
+# Does the academic and environmental background of an actor have an impact on his career success ?
+
+## Family environment
+
+### Parents relations
+<p style="flex: 1; text-align: justify">
+    It is interesting to study whether having one or two parents in the cinematographic world could have a positive impact 
+    on the success of an actor's career. You can see below a bar chart that presents the number of actors who have at least 
+    one parent who is also an actor.
+</p>
+
+<iframe src="src/graphs/actors_parents_number_distribtion.html" width="1200" height="800"></iframe>
+
+<p style="flex: 1; text-align: justify">
+    In addition to the graph, the majority of actors (48,438) defined in our analysis do not have at least one parent in 
+    the cinematographic field and therefore did not have parental influence in the acting industry. At the same time, we 
+    can see from the graph that 982 actors have one actor parent, and 193 have both parents in the acting field. This is 
+    very interesting, and we will now examine whether the popularity of actor parents could have a correlation with the 
+    actor's popularity. Finally, there is one actor with three parents in the acting field, which could be the case in 
+    a recomposed family.<br><br>
+    You can see below an interactive scatter plot that present the relationship between an actor's popularity and one of their parent's 
+    popularity. You can select the type of popularity score used to compare the two popularities: the <b>opinion score</b> 
+    (extracted from Part 1), the <b>award score</b> (extracted from Part 2), and the <b>overall score</b> (a combination 
+    of the opinion score and award score) using the picker in the top-right corner of the graph.
+</p>
+
+<iframe src="src/graphs/actors_parents_popularity_correlation.html" width="1200" height="800"></iframe>
+
+<p style="flex: 1; text-align: justify">
+    In complement of the graph, the correlation for the popularity score obtained from the <b>public's opinion</b> 
+    (extracted from Part 1) between the actor and their parent is 0.113. This means that the actor's popularity is very 
+    slightly influenced by their parent’s <b>opinion score</b> popularity, as the covariance is very close to 0 this 
+    influence is very not important. We observe the same pattern for the <b>award popularity score</b>(correlation : 0.074) and the 
+    <b>overall score</b> (correlation: 0.080). Even though the influence is slightly smaller in these cases, since the correlation score is 
+    more small. This is particularly evident for the overall score, as it is calculated using a combination of 
+    the opinion and award scores. Therefore, while there is a small positive relationship along all the popularity score, 
+    it is not significant enough to conclude that the actor's popularity is heavily dependent on the popularity of their 
+    parents.<br><br>
+    Now, we can see on the graph that some actors, such as Angelina Jolie, who have a very famous parent Jon Voight, are 
+    also very famous themselves. These actors appear in the top-right corner of the graph, where both the actor's and parent's 
+    popularity scores are high.<br><br>
+    However, there are also actors with famous parents who are not as famous themselves and they are positioned along 
+    the y-axis. This suggests that despite having a well-known parent, their own popularity does not achieve the popularity 
+    of their parent.<br><br>
+    In opposition, there are famous actors who do not have famous parents. While this could indicate that the actor's success 
+    is largely independent of their parent. We could also argue that the parent's influence could still play a role due 
+    to their experience and knowledge of the cinematic field. Even if this influence is not evident in terms of popularity 
+    scores, it might still have an impact on the actor's career. These actors are present along the x-axis and there is a 
+    lot of actors in this case.<br><br>
+</p>
