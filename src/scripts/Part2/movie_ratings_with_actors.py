@@ -47,7 +47,8 @@ def create_movie_ratings_with_actors_graph():
                     "Number of Votes": True,
                     "Budget (USD)": True,
                     "Box Office (USD)": True, },
-        title="Number of Votes vs. Average Rating by Movie"
+        title="Number of Votes vs. Average Rating by Movie",
+        template="plotly_white",
     )
 
     # only display the top 5 actor by default
