@@ -1,3 +1,9 @@
+---
+layout: default
+title: Data Story
+permalink: /
+---
+
 # What characteristics make an actor’s career successful ?
 
 # What are the possible career paths, steps and possible trajectories ?
