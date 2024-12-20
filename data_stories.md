@@ -396,6 +396,8 @@ permalink: /
 </p>
 
 <p align="center"><iframe src="src/graphs/actors_universities_popularity_relations_with_weight_0.75.html" width="1200" height="800"></iframe></p>
+    
+<p style="flex: 1; text-align: justify">
     When the <b>University Score</b> is mostly based on actor count (75%) and minimally on the actors popularity (25%) 
     for a given university, the resulting rankings appear more relevant. The rankings highlight prestigious universities 
     in the acting field, such as the Royal Academy of Dramatic Art, the American Academy of Dramatic Art, and New York 
@@ -406,8 +408,6 @@ permalink: /
     This is because increasing the weight increases the likelihood of an actor attending a given university, thereby improving 
     the overall relevance of the rankings. It is the same principle as when we search for opinions online: the greater the 
     number of opinions, the more accurate and representative the overall evaluation becomes.
-<p style="flex: 1; text-align: justify">
-    TO BE COMPLETED
 </p>
 
 ## Nationality impact
