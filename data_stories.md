@@ -79,11 +79,11 @@ permalink: /
 
 <p style="flex: 1; text-align: justify">
     In this representation, we observe that a high budget and high ratings do not always guarantee a high box office.
-    For example, The Dark Knight, while critically acclaimed on IMDB, achieved less than half the box office revenue 
-    of Avatar, Titanic and The avengers. On the other hand, the Pirates of the Caribbean series features a very high 
+    For example, The Dark Knight, while critically acclaimed on IMDb, achieved less than half the box office revenue 
+    of Avatar, Titanic and The Avengers. On the other hand, the Pirates of the Caribbean series features a very high 
     budget with a high box office but movies with significantly less budget managed to gain comparable box office 
     revenue.<br><br>
-    As we saw, a high budget does not necessarily correlate with high box office revenue. for instance, Star 
+    As we saw, a high budget does not necessarily correlate with high box office revenue. For instance, Star 
     Wars Episode IV: A New Hope has a budget of $11 million but earned $775 million at the box office. Similarly, 
     The Lord of the Rings trilogy with each a budget of around $90 million and each generated around $1 billion in 
     box office revenue. Meanwhile, the films with the highest box office revenues are in the $200-250 millions range.
@@ -98,21 +98,21 @@ permalink: /
 
 # How can we measure the impact of an award on an actor's career in the cinematic field ?
 
-## Analysing Actors Oscars archivements by Category and Subcategory
+## Analysing Actors Oscars achievements by Category and Subcategory
 
 <div style="display:flex; align-items: center;">
     <p style="flex: 1; text-align: justify">
-        After choosing IMDb ratings and votes as a metric to assess actor popularity, we decided 
-        to analyze the Oscars as a second metric, more objective and universal. These awards are 
+        After choosing IMDb ratings and votes as a metric to assess actor popularity we decided 
+        to analyze the Oscars as a second metric more objective and universal. These awards are 
         purely honorary but they still hold significant value for an actor. Since there are 
         various Oscar categories, with some specifically recognizing actors and others focusing on 
-        movie (Title), music, production, direction, or screenwriting, we looked into the films each actor 
+        movie, music, production, direction, or screenwriting, we looked into the movie each actor 
         has played in to see if any of them had won an Oscar.<br><br>A score was then assigned based on whether the actor 
         participated in an Oscar-winning film, taking into account the category of the award. This approach helps 
         quantify the visibility or prestige the actor gained from the success of the films they were part of.<br><br>
-        In the first visualization, we show which actors benefited the most from Oscars—either through personal 
+        In the first visualization, we show which actors benefited the most from Oscars, either through personal 
         awards or by being in nominated or winning films. We also look at the categories they were nominated for, 
-        the ones they won, and the corresponding films.The same visualization but regarding the best actors in a imbd metrics
+        the ones they won, and the corresponding films.The same visualization but regarding the best actors in a IMDb metrics
         view lets us see how the highest-rated actors in terms of public opinion (via IMDb) performed in relation to the 
         Oscars.Finally, this analysis can also help verify if the weighting of the actor scores makes sense: 
         the proportion of each Oscar category should align with the metrics used to evaluate their popularity.
@@ -126,8 +126,8 @@ permalink: /
 <p align="center"><iframe src="src/graphs/Actors_Awards_Sunburst.html" width="1200" height="800"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
-    First, we want to check that our score metrics is well chosen to do so we have to see if the categories that are 
-    more present in the visualisation with the best actors given their Oscars achievement are the same than the one $
+    First, we want to check that our score metrics is well-chosen to do so we have to see if the categories that are 
+    more present in the visualisation with the best actors given their Oscars achievement are the same as the one
     with the best actors given the opinion score. We see that the category that leads in both case is the production one.
     The other categories are more balanced. We can see that some of the best actors given the opinion score haven't play 
     in much oscars_winning movies. We can also see that Tom Hanks as a high awards score compares to the people that have 
@@ -139,8 +139,8 @@ permalink: /
 
 <div style="display:flex; align-items: center;">
     <p style="flex: 1; text-align: justify">
-        To compare the scores based on imdb ratings and the scores based on awards we decided to do a scatter plot that shows 
-        the actor opinion scores on axis y and the awards score along the x-axis. For each actor we also computed the overall 
+        To compare the scores based on IMDb ratings and the scores based on awards we decided to do a scatter plot that shows 
+        the actor opinion scores on y-axis and the awards score along the x-axis. For each actor we also computed the overall 
         score and the z_score that represents the deviation from the mean. The size is proportional to the overall score
         and the colors represent the overall deviation.
     </p>
@@ -154,26 +154,24 @@ permalink: /
 
 <p style="flex: 1; text-align: justify">
     On the graph, we can see that there is a huge amount of actors in the left bottom corner which are not really successful. 
-    We can also see that there are many actors that have played in some Oscars-winning movies that have very low opinion scores.
+    We can also see that there are many actors that have played in some Oscars winning movies that have very low opinion scores.
     There are fewer actors that have high popularity scores but low awards scores. Some of the actors like Spencer Tracy have a bad opinion
-    score because they played in old movies and they are not really popular regarding from an IMDB perspective. 
+    score because they played in old movies and they are not really popular regarding from an IMDb perspective. 
     But this is why combining both scores is relevant since some actors are old-fashioned and not popular anymore but it would be 
-    wrong to call them unsuccessful in a awards looking basis. And some popular actor didn't had the chance to be nominated to the awards 
+    wrong to call them unsuccessful in a award looking basis. And some popular actor didn't had the chance to be nominated to the awards 
     but are popular which in the movie industry is a sign of success too.
-    This combination of metrics allows for a more nuanced evaluation, capturing both historical significance and contemporary
-    relevance, while highlighting the different ways an actor’s career can be considered successful.
 </p>
 
 # What characteristics make an actor’s career successful ?
-
-## Are the personas found relevant ? Relationship between a persona and the character occupation played by an actor in a movie
 
 <p style="flex: 1; text-align: justify">
      Personas refer to character archetypes, and for this analysis, we selected the 12 archetypes commonly defined in cinema. 
      Using large language models (LLMs), we extracted characters and their corresponding archetypes (personas) from movie summaries and 
      linked them to actors via movie metadata, which assigns characters to actors. The following analyses use the personas an 
      actor has portrayed throughout their career as a representation of their career trajectory.
-    </p>
+</p>
+
+## Are the personas found relevant ? Relationship between a persona and the character occupation played by an actor in a movie
 
 <div style="display:flex; align-items: center;">
     <p style="flex: 1; text-align: justify">
@@ -249,13 +247,15 @@ permalink: /
     Are the most successful actors more inclined to switch between several storytelling approaches or do they often stick to one?
 </p>
 <p style="flex: 1; text-align: justify">
-    Analyzing performers' "genre history"—that is, their inclinations toward different genres throughout time—would be crucial to answering this question. 
-    An engaging method to investigate this is using the interactive plot below. Through the use of the CMU dataset, which includes the actor's age at the time of each film's release, the genres of the films they starred in, and a success metric, 
-    we are able to graphically depict the progression of the actors' genre preferences—from the most well-known to the less well-known.
+    Analyzing performers' "genre history" that is, their inclinations toward different genres throughout time would be 
+    crucial to answering this question.An engaging method to investigate this is using the interactive plot below. 
+    Through the use of the CMU dataset, which includes the actor's age at the time of each film's release, the genres 
+    of the films they starred in, and a success metric, we are able to graphically depict the progression of the actors'
+    genre preferences from the most well-known to the less well-known.
 </p>
 <p style="flex: 1; text-align: justify">
     In order to achieve this, a histogram was used to count the number of films with a certain genre done during the year when the actor had a certain age. 
-    The adding of smooth curves permits a greater visualization of the genres distribution. Finally, the violin distributions 
+    The addition of smooth curves permits a greater visualization of the genres' distribution. Finally, the violin distributions 
     permit to show when the actor has done the most movies of a certain genre. A dropdown menu is used to see the preferred gender history of another actor, from the most successful to the least.
 </p>
 <p align="center"><iframe src="src/graphs/actors_preferred_genres_by_age.html" width="1200" height="600"></iframe></p>
@@ -370,7 +370,8 @@ With these proximity scores, we identified the nearest paths to the most success
 We examine the k-nearest career paths for the 30 most successful actors, 
 where success is quantified by summing the number of votes received for all movies an actor participates in. 
 Using a slider interface, k varies in increments of 10, ranging from 10 to 100, 
-enabling a detailed exploration of nearest-neighbor relationships based on this success metric across different levels of granularity.
+enabling a detailed exploration of nearest-neighbor relationships based on this success metric across different levels 
+of granularity.
 </p>
 
 <p align="center"><iframe src="src/graphs/K_neighbor_career_paths_success.html" width="1200" height="800"></iframe></p>
@@ -416,7 +417,7 @@ weighted according to the categories.</p>
 For the award score, we observe that the median is quite low for most top actors, rarely exceeding 100. 
 The minimum and even the first quartile are often zero or nearly zero. 
 This indicates that having a career path similar to that of a top actor does not necessarily result in receiving many awards. 
-This could be explained by the fact that awards are relatively rare, and moderately successful actors may not receive any, or only a few, throughout their careers.
+This could be explained by the fact that awards are relatively rare, and moderately successful actors may not receive or only a few throughout their careers.
 </p>
 
 <p style="flex: 1; text-align: justify">
@@ -424,7 +425,6 @@ This analysis reveals that while actors with career paths similar to top perform
 proximity alone does not guarantee high achievement. 
 It also demonstrates that actors with similar paths to top actors may not receive many awards, and in many cases, may not receive any at all.
 These findings highlight the complexity of success in the entertainment industry, where a similar career trajectory does not always lead to comparable outcomes.
-Here’s a refined version of your paragraph with improved clarity and flow:
 
 It is also important to note that the magnitude of the vectorized career depends on the number of movies an actor has played with each persona.
 Therefore, for two actors to have similar career paths, they must have portrayed similar personas a comparable number of times. 
@@ -486,7 +486,7 @@ This notion is supported by the results from the success metric analysis.
     In complement of the graph, the correlation for the popularity score obtained from the <b>public's opinion</b> 
     (extracted from Part 1) between the actor and their parent is <b>0.109</b>. This means that the actor's popularity is very 
     slightly influenced by their parent’s <b>opinion score</b> popularity, as the covariance is very close to 0 this 
-    influence is very not important. We observe the same pattern for the <b>award popularity score</b>(correlation : <b>0.041</b>) and the 
+    influence is very not important. We observe the same pattern for the <b>award popularity score </b>(correlation : <b>0.041</b>) and the 
     <b>overall score</b> (correlation: <b>0.063</b>). Even though the influence is slightly smaller in these cases, since the correlation score is 
     more small. This is particularly evident for the overall score, as it is calculated using a combination of 
     the opinion and award scores. Therefore, while there is a small positive relationship along all the popularity score, 
@@ -559,7 +559,7 @@ This notion is supported by the results from the success metric analysis.
 
 <p style="flex: 1; text-align: justify">
     We can observe that many actors have attended American universities. And Los Angeles (even though it is not directly a university), 
-    the University of California, and the Royal Academy of Dramatic Art(England) are the institutions with the highest number 
+    the University of California, and the Royal Academy of Dramatic Art (England) are the institutions with the highest number 
     of actor students. We will now consider the popularity of actor students who attended these institutions to evaluate 
     whether studying at these universities increases an actor's chances of becoming popular.<br><br>
     Below, you can see interactive bar that show the relationship between the popularity of actor from 
@@ -697,7 +697,7 @@ This notion is supported by the results from the success metric analysis.
 <p style="flex: 1; text-align: justify">
     We observe that the majority of actors (238,517) have not performed in their home countries, suggesting that many 
     have had to travel abroad to advance their acting careers. It would now be interesting to explore in which countries 
-    the most popular actors perform in or if te popular actors perform in their country.<br><br>
+    the most popular actors perform in or if the popular actors perform in their country.<br><br>
     Below, you can see an interactive scatter plot that show the relationship between the popularity of actors with 
     the country where they have performed to realize a movie. You can select the type of popularity score used to evaluate an actor's 
     popularity: the <b>opinion score</b> (extracted from Part 1), the <b>award score</b> (extracted from Part 2), and the 
@@ -732,23 +732,34 @@ This notion is supported by the results from the success metric analysis.
 <p style="flex: 1; text-align: justify">
     The decision about whether an actor is successful or not comes from a combination of two key metrics: one representing 
     the popularity of the movies they act in, and the other based on whether they starred
-    in an Oscar-winning film. Using both metrics is important because some actors appear in many popular movies that were
-    never nominated for Oscars. Since Oscars are not based on popularity, older movies often tend to have lower popularity
-    scores. However, popularity remains as significant an indicator of success in the movie industry as awards.<br><br>
+    in an Oscar winning film. Using both metrics is important because some actors appears in many popular movies that were
+    never nominated for Oscars. Since Oscars are not based on popularity, older movies often tend to have lower opinion
+    scores. However, popularity remains as significant as  awards to indicate success in the movie industry .<br><br>
     To achieve a strong performance, a role defined by a given persona may require complementary occupations or professions 
     alongside an actor’s primary work. For example, many actors, especially those associated with certain personas, also have 
-    experience in stage acting. This additional skills often enhances their ability to deliver nuanced performances or specialized performance (ex: singer).<br><br>
-    When analyzing career path similarity through personas, we found that actors with paths similar to the most successful actors based on popularity tend to also achieve success.
-    However, when performing the analysis using the award score metric, this trend does not hold. Many actors with paths similar to those of the highest award-winning actors have
+    experience in stage acting. This additional skills often enhances their ability to deliver nuanced performances or 
+    specialized performance (for example: singer).<br><br>
+    When analyzing career path similarity through personas, we found that actors with paths similar to the most successful 
+    actors based on popularity tend to also achieve success.
+    However, when performing the analysis using the award score metric, this trend does not hold. Many actors with paths
+    similar to those of the highest award-winning actors have
     received few or no awards themselves. <br><br>
-    Moreover, the analysis of actors' favorite movie genres over their careers revealed patterns in how preferred genres change over time. 
-    Although no correlation was found between genre instability and an actor's success, valuable insights could still be derived from these patterns.When examining the family environment of actors, it becomes evident that having a parent in the cinematographic field can significantly contribute to a successful career.<br><br>
-    This is especially true if the parent was a successful actor, although even less successful parents may provide valuable insights and knowledge about the cinematographic industry.<br>
+    Moreover, the analysis of actors' favorite movie genres over their careers revealed patterns in how preferred genres
+    change over time. 
+    Although no correlation was found between genre instability and an actor's success, valuable insights could still be
+    derived from these patterns.When examining the family environment of actors, it becomes evident that having a parent 
+    in the cinematographic field can significantly contribute to a successful career.<br><br>
+    This is especially true if the parent was a successful actor, although even less successful parents may provide 
+    valuable insights and knowledge about the cinematographic industry.<br>
     In opposition, having a successful actor as a spouse does not appear to have a direct impact on an actor’s popularity. 
     However, a notable proportion of actors with high award scores also have spouses with similarly high awards score.<br>
-    Attending a prestigious university can also contribute to a successful career. Among the most prominent institutions is the Royal Academy of Dramatic Art in England.
+    Attending a prestigious university can also contribute to a successful career. Among the most prominent institutions 
+    is the Royal Academy of Dramatic Art in England.
     Other top universities for actors are primarily located in the United States.<br>
-    Regarding nationality, it comes as no surprise that the majority of successful actors are American, followed by actors from the United Kingdom and India.<br>
-    Finally, most actors do not exclusively perform in their home countries, indicating the necessity of international mobility during their careers. 
-    However, the most popular actors tend to perform primarily in their home countries (which may be influenced by fact that most of the popular actor are american).
+    Regarding nationality, it comes as no surprise that the majority of successful actors are American, followed by 
+    actors from the United Kingdom and India.<br>
+    Finally, most actors do not exclusively perform in their home countries, indicating the necessity of international
+    mobility during their careers. 
+    However, the most popular actors tend to perform primarily in their home countries (which may be influenced by fact 
+    that most of the popular actor are american).
 </p>
