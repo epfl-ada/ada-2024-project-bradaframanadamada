@@ -123,7 +123,7 @@ permalink: /
     </figure>
 </div>
 
-<p align="center"><iframe src="src/graphs/Actors_Awards_Sunburst.html" width="1200" height="800" ></iframe></p>
+<p align="center"><iframe src="src/graphs/Actors_Awards_Sunburst.html" width="350" height="200"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     First, we want to check that our score metrics is well chosen to do so we have to see if the categories that are 
@@ -145,12 +145,12 @@ permalink: /
         and the colors represent the overall deviation.
     </p>
     <figure>
-        <img src="src/image/films_rating_with_actors_chatGPT.webp" width="200" height="200">
+        <img src="src/image/ratings_and_awards.png" width="200" height="200">
         <figcaption style="text-align: center"> Generated using AI</figcaption>
     </figure>
 </div>
 
-<p align="center"><iframe src="src/graphs/actor_awards_votes_graphs.html" width="1200" height="800" ></iframe></p>
+<p align="center"><iframe src="src/graphs/actor_awards_votes_graphs.html" width="350" height="200"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     On the graph, we can see that there is a huge amount of actors in the left bottom corner which are not really successful. 
