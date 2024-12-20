@@ -1,5 +1,7 @@
 # ada-2024-project-bradaframanadamada
 
+<b>Link to the website : </b> https://epfl-ada.github.io/ada-2024-project-bradaframanadamada/
+
 # Presentation
 
 # Defining Success in Acting: Analysing Career Paths, Role Choices, and Film Impact
@@ -67,16 +69,13 @@ The goal of our analysis is to understand the factors that define a successful a
 - **From 16/12 to 22/12:** Finalise the website and complete with explanation to answer clearly to the sub questions and the main problem, and the conclusion (possible opening: recommender for the career actor choices). 
 
 ## Organisation within the team
-- **(Q1) Personas and roles in the film** (Hof & Fleury)
+- **(Q1) Personas in the film** (Fleury)
+- **(Q1) Personas characters (role in film) VS Persona (to check relevance of the persona)** (Hof)
+- **(Q1) Personas and actors occupations/professions relations** (Hof)
 - **(Q1) Age Period and career stage** (Beuret)
 - **(Q2) Film success** (Kurmann)
 - **(Q3) Award** (Steiner)
-- **(Q4) Family, academic and nationality impact** (Hof and maybe  others)
-
-## Questions for TAs (optional)
-Idea on the possible visualisation of the different career paths ?
-
-
+- **(Q4) Family, academic and nationality impact** (Hof)
 
 ## Project Structure
 
@@ -89,7 +88,9 @@ The directory structure of the project looks like this:
 │   ├── data                            <- Data directory
 │   ├── models                          <- Model directory
 │   ├── utils                           <- Utility directory
-│   ├── scripts                         <- Shell scripts
+│   ├── scripts                         <- Python Scripts
+|   ├── images                          <- Image used in the website
+|   ├── graphs                          <- HTML interactive graph used on the website
 │
 ├── tests                       <- Tests of any kind
 │
@@ -99,4 +100,3 @@ The directory structure of the project looks like this:
 ├── pip_requirements.txt        <- File for installing python dependencies
 └── README.md
 ```
-[Click here to open the main website](data_stories.html)
