@@ -235,6 +235,38 @@ permalink: /
     to evaluate due to the lack of direct occupations linked to humor.<br><br>
 </p>
 
+## What are the preferred film genres of successful actors?
+<p style="flex: 1; text-align: justify">
+    Whether it's comedy, drama, action, or another genre, actors frequently have favorite film genres in which they want to work. 
+    Do these preferences, however, hold true over the course of their careers? How frequently do actors switch to a different genre, maybe to take on new challenges or adjust to shifting fashions? 
+    What's more interesting is whether an actor's career is related to how consistently they choose their genres. 
+    Are the most successful actors more inclined to switch between several storytelling approaches or do they often stick to one?
+</p>
+<p style="flex: 1; text-align: justify">
+    Analyzing performers' "genre history"—that is, their inclinations toward different genres throughout time—would be crucial to answering this question. 
+    An engaging method to investigate this is using the interactive plot below. Through the use of the CMU dataset, which includes the actor's age at the time of each film's release, the genres of the films they starred in, and a success metric, 
+    we are able to graphically depict the progression of the actors' genre preferences—from the most well-known to the less well-known.
+</p>
+
+<p align="center"><iframe src="src/graphs/actors_preferred_genres_by_age.html" width="1200" height="800"></iframe></p>
+
+<p style="flex: 1; text-align: justify">
+    It exposes intriguing trends: some actors show some good adaptability in switching their specialty, 
+    while others stick to a particular genre throughout their careers. 
+    Even though performers typically stay within their preferred genres, even little changes in their selections might yield fascinating insights.
+</p>
+<p style="flex: 1; text-align: justify">
+    One noteworthy pattern is that actors who are liking drama usually stick with it, and intriguingly tend to play some thriller roles at the end of their career. 
+    On the other hand, comedic performers tend to move away from comedy as their careers goes and instead choose drama or adventure movies.
+</p>
+<p style="flex: 1; text-align: justify">
+    All things considered, this plot offers a lot of information, providing a thorough and complex look at how actors' tastes in genre change throughout their careers. 
+    In addition to the highlighting of the consistency or variation in their decisions, 
+    it also provides information into both individual career paths and more general industry patterns. 
+    For example, switching from comedy to drama or adventure could be a reaction to audience tastes or an actor's wish to take on more difficult roles. 
+    This visualization offers an unmatched glimpse into how cinema careers change, develop, or remain firmly planted in particular creative domains by showing the favorite genres at different points in an actor's life.
+</p>
+
 ## The Diversity in the actors occupations/professions. 
 <div style="display:flex; align-items: center;">
     <p style="flex: 1; text-align: justify">
@@ -302,69 +334,92 @@ permalink: /
 # What are the career paths of successful actors? And are actors with similar paths also successful?
 
 <p style="flex: 1; text-align: justify">
-During the processing step, we defined a career as being two lists. One containing a list of personas for each movie 
-an actor played, and the other containing the age the actor was during that movie. So we can visualise a career path like this. (maybe make it a plotly interactive graph with actor selection)
+During the data processing step, we conceptualized a career as comprising two components: 
+(1) a list of personas list representing personas of the role an actor played in each movie,
+and (2) a corresponding list of the actor's age at the time of each movie. 
+This dual representation allows us to visualize an actor's career path in the following manner.
 </p>
 
 <figure>
-        <img src="src/graphs/Harrison_Ford_career.png" alt="Harrsion Ford Career" width="1200" height="800">
+        <img src="src/graphs/Harrison_Ford_career.png" alt="Harrsion Ford Career" width="1187" height="590">
         <figcaption style="text-align: center"> Harrison Ford career as a sequence of personas through time</figcaption>
     </figure>
 
 <p style="flex: 1; text-align: justify">
-However this form is not the best to compare paths together, as it is overly complex. We can simplify the paths by dropping the age
-and vectorizing the list of personas to a 12 dimensional vector for each movie. Assuming the order of the movies is not crucial,
-we can sum the vector of all movies in a career together to obtain a 12 dimensional representation of a career. Once we have this new
-reprensentation, we use the l1 distance to compute a proximity score between careers.
-With this proximity score, we can look for the closest neighbors for the most successful actors on some metric.
+This initial representation, while detailed, is not ideal for comparing career paths due to its complexity. 
+To simplify, we omitted the age component and vectorized the list of personas into a 12-dimensional vector for each movie. 
+Assuming the sequence of movies is not critical, we aggregated these vectors by summing them across all movies in a career, 
+resulting in a single 12-dimensional representation per career. 
+Using this representation, we calculated a proximity score between careers based on the L1 distance. 
+With these proximity scores, we identified the nearest paths to the most successful actors.
 </p>
 
 ## Analysis on the success metric
 
 <p style="flex: 1; text-align: justify">
-We start by looking at the k nearest paths for the 30 most successful actors. 
-The slider show increments of 10 with k ranging from 10 to 100.
+We examine the k-nearest career paths for the 30 most successful actors, 
+where success is quantified by summing the number of votes received for all movies an actor participates in. 
+Using a slider interface, k varies in increments of 10, ranging from 10 to 100, 
+enabling a detailed exploration of nearest-neighbor relationships based on this success metric across different levels of granularity.
 </p>
 
 <p align="center"><iframe src="src/graphs/K_neighbor_career_paths_success.html" width="1200" height="800"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
-We can see that when k=10, the first quartile for most actors is above 100'000 and the median above 1 million.
-This indicate that while they are not as successful as the top 30 actors, actors with similar paths have at least 
-a somewhat successful career.
-We can see that even with a small k, there is an actor with a path close to John Ratzenberger that have a low score 
-of only 737, so having a path close to the one of a successful actor does not always mean you are successful too.
+We observe that when k=10, the first quartile for most actors exceeds 100,000, and the median surpasses 1 million.
+This suggests that, while they may not reach the success level of the top 30 actors, individuals with similar career paths tend to have at least moderately successful careers. 
+However we find exceptions, for instance we can see with k=10 that an actor with a career path close to John Ratzenberger's has a low score of only 737. 
+This demonstrates that having a career path similar to a highly successful actor does not always guarantee success.
 </p>
 
 <p style="flex: 1; text-align: justify">
-We can also see that when we increase k, the minimal score in the k nearest neighbor decreases, but an explanation could be that those paths are far
-and there is simply not k paths close enough to be meaningful.
-A way to check this is to consider all paths closer than a certain threshold from each of the successful actors paths.
-This will not consider points that are too far from the original path. However, it will make the number
-of considered datapoint flexible, and possibly lead to missing statistics. 
+We also observe that as k increases, the minimal score among the k-nearest neighbors decreases a lot for some actors. 
+This could be explained by the fact that more distant paths are included, and there may not be k paths close enough to provide meaningful comparisons. 
+To address this, we consider all paths within a certain threshold of similarity to each successful actor's path. 
+This approach excludes paths that are too distant from the original, ensuring more relevant comparisons. 
+However, it introduces flexibility in the number of data points analyzed, which could potentially result in missing or incomplete statistics. 
 </p>
 
 <p align="center"><iframe src="src/graphs/d_distance_career_paths_success.html" width="1200" height="800"></iframe></p>
 
 
 <p style="flex: 1; text-align: justify">
-We can see in the graph that while some actors, like John Ratzenberger, Warwick Davis and Hugo Weaving,
-have unsuccessful actors with path close to them. 
-We also see that the low minimum of actors like Liam Neeson and Tom Cruise appears completely normal there,
-which means that the low minimum with a high k was for an actor that was further from them.
+The graph reveals that while some actors, such as John Ratzenberger, Warwick Davis, and Hugo Weaving, 
+have unsuccessful actors with career paths close to theirs, others show a different trend. 
+For instance, actors like Liam Neeson and Tom Cruise, who exhibit low minimum scores in the k-neighbors case, 
+show no such low minimum when using the threshold-based approach. 
+This suggests that the low minimum scores in the high-k scenario result from including actors with career paths that are too far. 
+These findings indicate that certain career paths may inherently have fewer chances of leading to success.
 </p>
 
 ## Analysis on the award metric
 
 <p style="flex: 1; text-align: justify">
-We repeat the previous analysis with the award score metric.
-</p>
+We repeat the previous analysis using the award score metric, 
+which is based on the Oscar nominations and wins of the actor or the movies they have starred in,
+weighted according to the categories.</p>
 
 <p align="center"><iframe src="src/graphs/K_neighbor_career_paths_award.html" width="1200" height="800"></iframe></p>
 <p align="center"><iframe src="src/graphs/d_distance_career_paths_award.html" width="1200" height="800"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
-We repeat the previous analysis with the award score metric.
+For the award score, we observe that the median is quite low for most top actors, rarely exceeding 100. 
+The minimum and even the first quartile are often zero or nearly zero. 
+This indicates that having a career path similar to that of a top actor does not necessarily result in receiving many awards. 
+This could be explained by the fact that awards are relatively rare, and moderately successful actors may not receive any, or only a few, throughout their careers.
+</p>
+
+<p style="flex: 1; text-align: justify">
+This analysis reveals that while actors with career paths similar to top performers often show moderate or better success,
+proximity alone does not guarantee high achievement. 
+It also demonstrates that actors with similar paths to top actors may not receive many awards, and in many cases, may not receive any at all.
+These findings highlight the complexity of success in the entertainment industry, where a similar career trajectory does not always lead to comparable outcomes.
+Here’s a refined version of your paragraph with improved clarity and flow:
+
+It is also important to note that the magnitude of the vectorized career depends on the number of movies an actor has played with each persona.
+Therefore, for two actors to have similar career paths, they must have portrayed similar personas a comparable number of times. 
+However, less successful actors are likely to be cast in fewer movies than top actors, so having a similar career path to a top actor likely indicates a certain level of success. 
+This notion is supported by the results from the success metric analysis.
 </p>
 
 # Does the academic and environmental background of an actor have an impact on his career success ?
