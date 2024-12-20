@@ -56,4 +56,4 @@ def create_actor_awards_votes_graphs():
     fig.show()
 
     # Save graph to an HTML file
-    #fig.write_html("src/graphs/actor_awards_votes_graphs.html")
+    fig.write_html("src/graphs/actor_awards_votes_graphs.html")
