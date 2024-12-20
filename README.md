@@ -70,8 +70,8 @@ The goal of our analysis is to understand the factors that define a successful a
 
 ## Organisation within the team
 - **(Q1) Personas in the film** (Fleury)
-- **(Q1) Personas characters (role in film) VS Persona (to check relevance of the persona) (Hof)
-- **(Q1) Personas and actors occupations/professions relations (Hof)
+- **(Q1) Personas characters (role in film) VS Persona (to check relevance of the persona)** (Hof)
+- **(Q1) Personas and actors occupations/professions relations** (Hof)
 - **(Q1) Age Period and career stage** (Beuret)
 - **(Q2) Film success** (Kurmann)
 - **(Q3) Award** (Steiner)
@@ -88,7 +88,9 @@ The directory structure of the project looks like this:
 │   ├── data                            <- Data directory
 │   ├── models                          <- Model directory
 │   ├── utils                           <- Utility directory
-│   ├── scripts                         <- Shell scripts
+│   ├── scripts                         <- Python Scripts
+|   ├── images                         <- Image used in the website
+|   ├── scripts                         <- HTML interactive graph used on the website
 │
 ├── tests                       <- Tests of any kind
 │
