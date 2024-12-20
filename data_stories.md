@@ -226,7 +226,7 @@ an actor played, and the other containing the age the actor was during that movi
 </p>
 
 <figure>
-        <img src="src/graphs/Harrison_Ford_career.png" alt="Harrsion Ford Career" width="350" height="200">
+        <img src="src/graphs/Harrison_Ford_career.png" alt="Harrsion Ford Career" width="1200" height="800">
         <figcaption style="text-align: center"> Harrison Ford career as a sequence of personas through time</figcaption>
     </figure>
 
@@ -235,35 +235,55 @@ However this form is not the best to compare paths together, as it is overly com
 and vectorizing the list of personas to a 12 dimensional vector for each movie. Assuming the order of the movies is not crucial,
 we can sum the vector of all movies in a career together to obtain a 12 dimensional representation of a career. Once we have this new
 reprensentation, we use the l1 distance to compute a proximity score between careers.
+With this proximity score, we can look for the closest neighbors for the most successful actors on some metric.
 </p>
 
+## Analysis on the success metric
+
 <p style="flex: 1; text-align: justify">
-With this proximity score, we can look for the closest neighbors for the most successful actors on some metric.
-The following graphs are doing it on the success score (what is it exactly?) and the award score (what is it exactly?)
+We start by looking at the k nearest paths for the 30 most successful actors. 
+The slider show increments of 10 with k ranging from 10 to 100.
 </p>
 
 <p align="center"><iframe src="src/graphs/K_neighbor_career_paths_success.html" width="1200" height="800"></iframe></p>
-<p align="center"><iframe src="src/graphs/K_neighbor_career_paths_award.html" width="1200" height="800"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
-Analysis 
-(for some actor, they are also successful, for others less so.
-as k increase, more badly generalizing paths => due to lack of close neighbors?
-etc.
+We can see that when k=10, the first quartile for most actors is above 100'000 and the median above 1 million.
+This indicate that while they are not as successful as the top 30 actors, actors with similar paths have at least 
+a somewhat successful career.
+We can see that even with a small k, there is an actor with a path close to John Ratzenberger that have a low score 
+of only 737, so having a path close to the one of a successful actor does not always mean you are successful too.
 </p>
 
 <p style="flex: 1; text-align: justify">
-An other way to compute those statistics is to consider all paths closer than a certain threshold from each of the successful actors paths.
-This solve the problem of the k nearest neighbor approach as it will not consider points that are too far. However, it will make the number
-of considered datapoint flexible, and possibly lead to missing statistics. The two following graphs present the results of this approach on
-the two metrics described previously.
+We can also see that when we increase k, the minimal score in the k nearest neighbor decreases, but an explanation could be that those paths are far
+and there is simply not k paths close enough to be meaningful.
+A way to check this is to consider all paths closer than a certain threshold from each of the successful actors paths.
+This will not consider points that are too far from the original path. However, it will make the number
+of considered datapoint flexible, and possibly lead to missing statistics. 
 </p>
 
 <p align="center"><iframe src="src/graphs/d_distance_career_paths_success.html" width="1200" height="800"></iframe></p>
+
+
+<p style="flex: 1; text-align: justify">
+We can see in the graph that while some actors, like John Ratzenberger, Warwick Davis and Hugo Weaving,
+have unsuccessful actors with path close to them. 
+We also see that the low minimum of actors like Liam Neeson and Tom Cruise appears completely normal there,
+which means that the low minimum with a high k was for an actor that was further from them.
+</p>
+
+## Analysis on the award metric
+
+<p style="flex: 1; text-align: justify">
+We repeat the previous analysis with the award score metric.
+</p>
+
+<p align="center"><iframe src="src/graphs/K_neighbor_career_paths_award.html" width="1200" height="800"></iframe></p>
 <p align="center"><iframe src="src/graphs/d_distance_career_paths_award.html" width="1200" height="800"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
-Analysis
+We repeat the previous analysis with the award score metric.
 </p>
 
 # Does the academic and environmental background of an actor have an impact on his career success ?
