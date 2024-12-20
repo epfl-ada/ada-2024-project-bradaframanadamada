@@ -70,6 +70,7 @@ The goal of our analysis is to understand the factors that define a successful a
 
 ## Organisation within the team
 - **(Q1) Personas in the film** (Fleury)
+- **(Q1) Path proximity analysis** (Fleury)
 - **(Q1) Personas characters (role in film) VS Persona (to check relevance of the persona)** (Hof)
 - **(Q1) Personas and actors occupations/professions relations** (Hof)
 - **(Q1) Age Period and career stage** (Beuret)
