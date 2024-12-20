@@ -119,7 +119,9 @@ def path_graph_k_neighbors(sorting_id, n, df_score, df_merged, mode, start=10, s
     fig.update_layout(
         sliders=sliders
     )
-    fig.update_yaxes(type="log")
+    # make y axis log only for success mode as the score have a huge magnitude
+    if mode == 'success':
+        fig.update_yaxes(type="log")
     fig.update_layout(title=dict(
         text=f'{mode} score distribution of the k={start} nearest career paths for top {n} actors'
     ),
@@ -182,7 +184,9 @@ def path_graph_d_distance(distance_matrix, n, df_score, df_merged, mode, start=1
     fig.update_layout(
         sliders=sliders
     )
-    fig.update_yaxes(type="log")
+    # make y axis log only for success mode as the score have a huge magnitude
+    if mode == 'success':
+        fig.update_yaxes(type="log")
     fig.update_layout(title=dict(
         text=f'{mode} score distribution of the career paths at distance < {start} for top {n} actors'
     ),
