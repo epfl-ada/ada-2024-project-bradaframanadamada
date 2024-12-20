@@ -218,7 +218,53 @@ permalink: /
     adaptability to convincingly represent young characters.<br><br>
 </p>
 
-# What are the possible career paths, steps and possible trajectories ?
+# What are the career paths of successful actors? And are actors with similar paths also successful?
+
+<p style="flex: 1; text-align: justify">
+During the processing step, we defined a career as being two lists. One containing a list of personas for each movie 
+an actor played, and the other containing the age the actor was during that movie. So we can visualise a career path like this. (maybe make it a plotly interactive graph with actor selection)
+</p>
+
+<figure>
+        <img src="src/graphs/Harrison_Ford_career.png" alt="Harrsion Ford Career" width="350" height="200">
+        <figcaption style="text-align: center"> Harrison Ford career as a sequence of personas through time</figcaption>
+    </figure>
+
+<p style="flex: 1; text-align: justify">
+However this form is not the best to compare paths together, as it is overly complex. We can simplify the paths by dropping the age
+and vectorizing the list of personas to a 12 dimensional vector for each movie. Assuming the order of the movies is not crucial,
+we can sum the vector of all movies in a career together to obtain a 12 dimensional representation of a career. Once we have this new
+reprensentation, we use the l1 distance to compute a proximity score between careers.
+</p>
+
+<p style="flex: 1; text-align: justify">
+With this proximity score, we can look for the closest neighbors for the most successful actors on some metric.
+The following graphs are doing it on the success score (what is it exactly?) and the award score (what is it exactly?)
+</p>
+
+<p align="center"><iframe src="src/graphs/K_neighbor_career_paths_success.html" width="1200" height="800"></iframe></p>
+<p align="center"><iframe src="src/graphs/K_neighbor_career_paths_award.html" width="1200" height="800"></iframe></p>
+
+<p style="flex: 1; text-align: justify">
+Analysis 
+(for some actor, they are also successful, for others less so.
+as k increase, more badly generalizing paths => due to lack of close neighbors?
+etc.
+</p>
+
+<p style="flex: 1; text-align: justify">
+An other way to compute those statistics is to consider all paths closer than a certain threshold from each of the successful actors paths.
+This solve the problem of the k nearest neighbor approach as it will not consider points that are too far. However, it will make the number
+of considered datapoint flexible, and possibly lead to missing statistics. The two following graphs present the results of this approach on
+the two metrics described previously.
+</p>
+
+<p align="center"><iframe src="src/graphs/d_distance_career_paths_success.html" width="1200" height="800"></iframe></p>
+<p align="center"><iframe src="src/graphs/d_distance_career_paths_award.html" width="1200" height="800"></iframe></p>
+
+<p style="flex: 1; text-align: justify">
+Analysis
+</p>
 
 # Does the academic and environmental background of an actor have an impact on his career success ?
 
