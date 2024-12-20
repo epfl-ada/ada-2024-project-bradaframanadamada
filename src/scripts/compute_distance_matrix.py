@@ -43,11 +43,27 @@ def create_distance_matrix(summed_personas):
             m[i, j] = similarity
     return m
 
-if __name__ == '__main__':
+def compute_distance_matrix_with_mode(mode):
+    """
+    compute the distance matrix for a specified mode and save it in 'src/data/distance_matrix_{mode}.txt'
+    @param mode: can be either 'award' or 'success'
+    """
+    if mode == 'award':
+        score_path = '../data/actors_awards_scores.csv'
+    elif mode == 'success':
+        score_path = '../data/actors_success.csv'
+    else:
+        raise ValueError('mode must be either "award" or "success"')
     df_paths = pd.read_pickle('../data/clean_careers_paths.pkl')
-    df_success = pd.read_csv('../data/actors_success.csv')
-    df = df_paths.reset_index()[['Actor name','personas_list', 'freebase_actor_id']].merge(df_success[['freebase_actor_id', 'score']])
-    df['vectorized_personas'] = (df['personas_list'].apply(lambda personas_list: np.array(vecorize_personas_list(GOOD_PERSONAS, personas_list))))
+    df_scores = pd.read_csv(score_path)
+    df = df_paths.reset_index()[['Actor name', 'personas_list', 'freebase_actor_id']].merge(
+        df_scores[['freebase_actor_id', 'score']])
+    df['vectorized_personas'] = (
+        df['personas_list'].apply(lambda personas_list: np.array(vecorize_personas_list(GOOD_PERSONAS, personas_list))))
     df['summed_personas'] = df['vectorized_personas'].apply(sum_vectorized_personas)
     matrix = create_distance_matrix(df['summed_personas'])
-    np.savetxt('../data/distance_matrix.txt', matrix, delimiter=',')
+    np.savetxt(f'../data/distance_matrix_{mode}.txt', matrix, delimiter=',')
+if __name__ == '__main__':
+    # possibles modes: 'award' or 'success'
+    mode = 'award'
+    compute_distance_matrix_with_mode(mode)
