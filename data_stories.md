@@ -16,7 +16,7 @@ permalink: /
     an actor has participated in and the box office performance of those films.<br><br>
     In the second part, we create another score that measures the cultural impact of the actor, derived from the number 
     of nominations and awards achieved in the Oscars category.<br><br>
-    Next, we aim to analyze the film genres in which actors predominantly work. (TODO: Complete this section with more details.)<br><br>
+    Next, we aim to analyze the film genres in which actors predominantly work and the changes through their life as well as the common pattern between actors.<br><br>
     In the fourth part, we associate each role played by an actor with a specific persona. We will then investigate which 
     of these personas are most commonly linked to success. Additionally, we will explore complementary professions or activities 
     often undertaken by actors and determine how these align with their personas.<br><br>

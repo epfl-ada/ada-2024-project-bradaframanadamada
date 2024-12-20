@@ -120,16 +120,16 @@ def plot_genres_over_age_with_dropdown(actor_dfs, nb_genres):
 
     # Save the plot
     fig.show()
-    fig.write_html("../../graphs/actors_preferred_genres_by_age.html")
+    fig.write_html("src/graphs/actors_preferred_genres_by_age.html")
 
 def compute_actor_genres_by_age():
     """
     This function computes and plots the favorite actor genres through their life.
     """
     # Import DataFrames and drop possible NaN # This is your Project Root
-    cmu_df = pd.read_pickle("../../data/metadata_cmu.pkl")
+    cmu_df = pd.read_pickle("src/data/metadata_cmu.pkl")
     cmu_df = cmu_df.dropna(subset=["Actor age at movie release"])
-    actor_success_df = pd.read_csv("../../data/actors_success.csv")
+    actor_success_df = pd.read_csv("src/data/actors_success.csv")
 
     actor_success_df.rename(columns={'freebase_actor_id': 'Freebase actor ID'}, inplace=True)
 
@@ -148,6 +148,3 @@ def compute_actor_genres_by_age():
 
     # Call the plot function
     plot_genres_over_age_with_dropdown(actors_dict, NB_GENRES)
-
-if __name__ == "__main__":
-    compute_actor_genres_by_age()
