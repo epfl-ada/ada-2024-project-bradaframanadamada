@@ -98,14 +98,27 @@ permalink: /
 
 # How can we measure the impact of an award on an actor's career in the cinematic field ?
 
-## todo
+## Analysing Actors Oscars archivements by Category and Subcategory
 
 <div style="display:flex; align-items: center;">
     <p style="flex: 1; text-align: justify">
-        Explication graph
+        After choosing IMDb ratings and votes as a metric to assess actor popularity, we decided 
+        to analyze the Oscars as a second metric, more objective and universal. These awards are 
+        purely honorary but they still hold significant value for an actor. Since there are 
+        various Oscar categories, with some specifically recognizing actors and others focusing on 
+        movie (Title), music, production, direction, or screenwriting, we looked into the films each actor 
+        has played in to see if any of them had won an Oscar.<br><br>A score was then assigned based on whether the actor 
+        participated in an Oscar-winning film, taking into account the category of the award. This approach helps 
+        quantify the visibility or prestige the actor gained from the success of the films they were part of.<br><br>
+        In the first visualization, we show which actors benefited the most from Oscars—either through personal 
+        awards or by being in nominated or winning films. We also look at the categories they were nominated for, 
+        the ones they won, and the corresponding films.The same visualization but regarding the best actors in a imbd metrics
+        view lets us see how the highest-rated actors in terms of public opinion (via IMDb) performed in relation to the 
+        Oscars.Finally, this analysis can also help verify if the weighting of the actor scores makes sense: 
+        the proportion of each Oscar category should align with the metrics used to evaluate their popularity.
     </p>
     <figure>
-        <img src="src/image/films_rating_with_actors_chatGPT.webp" width="200" height="200">
+        <img src="src/image/awards_categories_chatGPT.png" width="1200" height="800">
         <figcaption style="text-align: center"> Generated using AI</figcaption>
     </figure>
 </div>
@@ -113,14 +126,23 @@ permalink: /
 <p align="center"><iframe src="src/graphs/Actors_Awards_Sunburst.html" width="1200" height="800" ></iframe></p>
 
 <p style="flex: 1; text-align: justify">
-    Analysis of graph
+    First, we want to check that our score metrics is well chosen to do so we have to see if the categories that are 
+    more present in the visualisation with the best actors given their Oscars achievement are the same than the one $
+    with the best actors given the opinion score. We see that the category that leads in both case is the production one.
+    The other categories are more balanced. We can see that some of the best actors given the opinion score haven't play 
+    in much oscars_winning movies. We can also see that Tom Hanks as a high awards score compares to the people that have 
+    similar popularity score as him. But if we compare it to Meryl Streep it doesn't seem that big. These visualisations are 
+    a way to see which Oscars most popular actors or the movie they played in have won than actually compare the two scores.
 </p>
 
-## todo
+## Comparison between Oscars achievement and public opinion
 
 <div style="display:flex; align-items: center;">
     <p style="flex: 1; text-align: justify">
-        Explication graph
+        To compare the scores based on imdb ratings and the scores based on awards we decided to do a scatter plot that shows 
+        the actor opinion scores on axis y and the awards score along the x-axis. For each actor we also computed the overall 
+        score and the z_scored that represents the deviation from the mean. The size is proportional to the overall score
+        and the colors represent the overall deviation.
     </p>
     <figure>
         <img src="src/image/films_rating_with_actors_chatGPT.webp" width="200" height="200">
@@ -131,7 +153,15 @@ permalink: /
 <p align="center"><iframe src="src/graphs/actor_awards_votes_graphs.html" width="1200" height="800" ></iframe></p>
 
 <p style="flex: 1; text-align: justify">
-    Analysis of graph
+    On the graph, we can see that there is a huge amount of actors in the left bottom corner which are not really successful. 
+    We can also see that there are many actors that have played in some Oscars-winning movies that have very low opinion scores.
+    There are fewer actors that have high popularity scores but low awards scores. Some of the actors like Spencer Tracy have a bad opinion
+    score because they played in old movies and they are not really popular regarding from an IMDB perspective. 
+    But this is why combining both scores is relevant since some actors are old-fashioned and not popular anymore but it would be 
+    wrong to call them unsuccessful in a awards looking basis. And some popular actor didn't had the chance to be nominated to the awards 
+    but are popular which in the movie industry is a sign of success too.
+    This combination of metrics allows for a more nuanced evaluation, capturing both historical significance and contemporary
+    relevance, while highlighting the different ways an actor’s career can be considered successful.
 </p>
 
 # What characteristics make an actor’s career successful ?

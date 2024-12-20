@@ -26,9 +26,9 @@ def create_actor_awards_votes_graphs():
                                          ) + min_size
     #data.head(5000)
     data = data.rename(columns={"scaled_size": "Size",
-                                "award_score": "Prestige Score",
+                                "award_score": "Awards Score",
                                 "overall_score": "Overall Score",
-                                "opinion_score": "Public Opinion Score",
+                                "opinion_score": "Opinion Score",
                                 "z_score_award": "Average Awards Deviation",
                                 "z_score_overall": "Overall Deviation",
                                 "z_score_opinion": "Average Opinion Deviation",
@@ -36,14 +36,14 @@ def create_actor_awards_votes_graphs():
 
     fig = px.scatter(
         data,
-        x='Prestige Score',
-        y='Public Opinion Score',
+        x='Awards Score',
+        y='Opinion Score',
         color = 'Overall Deviation',
         size = 'Size',
         color_continuous_scale=px.colors.sequential.ice_r,
         hover_name="Actor",
-        hover_data={"Prestige Score": True,
-                    "Public Opinion Score": True,
+        hover_data={"Awards Score": True,
+                    "Opinion Score": True,
                     "Overall Score": True,
                     "Average Awards Deviation": True,
                     "Average Opinion Deviation": True,
