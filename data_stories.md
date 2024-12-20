@@ -96,6 +96,44 @@ permalink: /
     in them, without using the box office revenue and budget.
 </p>
 
+# How can we measure the impact of an award on an actor's career in the cinematic field ?
+
+## todo
+
+<div style="display:flex; align-items: center;">
+    <p style="flex: 1; text-align: justify">
+        Explication graph
+    </p>
+    <figure>
+        <img src="src/image/films_rating_with_actors_chatGPT.webp" width="200" height="200">
+        <figcaption style="text-align: center"> Generated using AI</figcaption>
+    </figure>
+</div>
+
+<p align="center"><iframe src="src/graphs/Actors_Awards_Sunburst.html" width="1200" height="800" ></iframe></p>
+
+<p style="flex: 1; text-align: justify">
+    Analysis of graph
+</p>
+
+## todo
+
+<div style="display:flex; align-items: center;">
+    <p style="flex: 1; text-align: justify">
+        Explication graph
+    </p>
+    <figure>
+        <img src="src/image/films_rating_with_actors_chatGPT.webp" width="200" height="200">
+        <figcaption style="text-align: center"> Generated using AI</figcaption>
+    </figure>
+</div>
+
+<p align="center"><iframe src="src/graphs/actor_awards_votes_graphs.html" width="1200" height="800" ></iframe></p>
+
+<p style="flex: 1; text-align: justify">
+    Analysis of graph
+</p>
+
 # What characteristics make an actor’s career successful ?
 
 ## Are the personas found relevant ? Relationship between a persona and the character occupation played by an actor in a movie
