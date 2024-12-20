@@ -248,7 +248,7 @@ permalink: /
     we are able to graphically depict the progression of the actors' genre preferences—from the most well-known to the less well-known.
 </p>
 
-<p align="center"><iframe src="src/graphs/actors_preferred_genres_by_age.html" width="1200" height="800"></iframe></p>
+<p align="center"><iframe src="src/graphs/actors_preferred_genres_by_age.html" width="1200" height="600"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     It exposes intriguing trends: some actors show some good adaptability in switching their specialty, 
