@@ -168,14 +168,14 @@ permalink: /
 
 ## Are the personas found relevant ? Relationship between a persona and the character occupation played by an actor in a movie
 
-
-<div style="display:flex; align-items: center;">
-    <p style="flex: 1; text-align: justify">
+<p style="flex: 1; text-align: justify">
      Personas refer to character archetypes, and for this analysis, we selected the 12 archetypes commonly defined in cinema. 
      Using large language models (LLMs), we extracted characters and their corresponding archetypes (personas) from movie summaries and 
      linked them to actors via movie metadata, which assigns characters to actors. The following analyses use the personas an 
      actor has portrayed throughout their career as a representation of their career trajectory.
     </p>
+
+<div style="display:flex; align-items: center;">
     <p style="flex: 1; text-align: justify">
         We have extracted only a relatively small proportion of occupations per characters originally. As a result, 
         this part doesn't represent a major part of our analysis. However, they provide an interesting opportunity 
@@ -738,7 +738,7 @@ This notion is supported by the results from the success metric analysis.
     However, when performing the analysis using the award score metric, this trend does not hold. Many actors with paths similar to those of the highest award-winning actors have
     received few or no awards themselves. <br><br>
     Moreover, the analysis of actors' favorite movie genres over their careers revealed patterns in how preferred genres change over time. 
-    Although no correlation was found between genre instability and an actor's success, valuable insights could still be derived from these patterns.When examining the family environment of actors, it becomes evident that having a parent in the cinematographic field can significantly contribute to a successful career.<br></br>
+    Although no correlation was found between genre instability and an actor's success, valuable insights could still be derived from these patterns.When examining the family environment of actors, it becomes evident that having a parent in the cinematographic field can significantly contribute to a successful career.<br><br>
     This is especially true if the parent was a successful actor, although even less successful parents may provide valuable insights and knowledge about the cinematographic industry.<br>
     In opposition, having a successful actor as a spouse does not appear to have a direct impact on an actor’s popularity. 
     However, a notable proportion of actors with high award scores also have spouses with similarly high awards score.<br>
