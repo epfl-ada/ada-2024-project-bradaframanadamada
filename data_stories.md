@@ -39,7 +39,7 @@ permalink: /
         deselect actors by clicking on their name or double click to select them all or only one.
     </p>
     <figure>
-        <img src="src/image/films_rating_with_actors_chatGPT.webp" width="200" height="200">
+        <img src="src/image/films_rating_actors_chatGPT.jpeg" width="350" height="200">
         <figcaption style="text-align: center"> Generated using AI</figcaption>
     </figure>
 </div>
@@ -70,7 +70,7 @@ permalink: /
         move by clicking on the arrows named plan on the top right of the graph.
     </p>
     <figure>
-        <img src="src/image/films_audience_score_and_box_office.webp" width="200" height="200">
+        <img src="src/image/films_audience_and_box_office_chatGPT.jpeg" width="350" height="200">
         <figcaption style="text-align: center"> Generated using AI</figcaption>
     </figure>
 </div>
