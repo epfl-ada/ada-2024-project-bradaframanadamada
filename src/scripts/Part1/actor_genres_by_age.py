@@ -115,7 +115,8 @@ def plot_genres_over_age_with_dropdown(actor_dfs, nb_genres):
         xaxis_title="Actor age",
         yaxis_title="Number of films labeled with the corresponding genre",
         width=1200,
-        height=600
+        height=600,
+        template='plotly_white',
     )
 
     # Save the plot
@@ -134,7 +135,7 @@ def compute_actor_genres_by_age():
     actor_success_df.rename(columns={'freebase_actor_id': 'Freebase actor ID'}, inplace=True)
 
     NB_GENRES = 5
-    NB_ACTORS = 100
+    NB_ACTORS = 200
 
     # Get the NB_ACTORS most popular actors
     most_popular_actors_list = actor_success_df.sort_values("score", ascending=False)[:NB_ACTORS]
