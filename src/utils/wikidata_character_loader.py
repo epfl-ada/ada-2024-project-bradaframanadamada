@@ -164,7 +164,7 @@ class WikiDataCharacterLoader:
         :param newFileName: the name of the csv file where the clean will be saved.
         :return: the clean dataframe.
         """
-        df_data_not_clean = pd.read_csv(fileName)
+        df_data_not_clean = pd.read_csv(fileName, quotechar='"')
 
         # Print the initial number of elements
         print(f'Initial number of elements : {df_data_not_clean.shape[0]}')

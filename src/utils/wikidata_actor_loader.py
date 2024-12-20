@@ -186,7 +186,7 @@ class WikiDataActorLoader:
         :param newFileName: the name of the csv file where the clean will be saved.
         :return: the clean dataframe.
         """
-        df_data_not_clean = pd.read_csv(fileName)
+        df_data_not_clean = pd.read_csv(fileName, quotechar='"')
 
         # Print the initial number of elements
         print(f'Initial number of elements : {df_data_not_clean.shape[0]}')
@@ -197,9 +197,27 @@ class WikiDataActorLoader:
                 df_data_not_clean.drop(columns = [column], inplace = True)
 
         # change string encoding list to a list of elements
-        for column in ['nationality', 'occupation',	'spouse', 'children', 'alma_mater',	'award_received']:
+        for column in ['nationality', 'occupation', 'alma_mater',	'award_received']:
             df_data_not_clean[column] = df_data_not_clean[column].apply(
                 lambda x: list(x.split(', ')) if isinstance(x, str) else list()
+            )
+        def combine_JR_SR(list):
+            newList = []
+            i = 0
+            while i < len(list):
+                if(i < (len(list) -1) and ("Jr" in list[i + 1] or "Sr" in list[i + 1] )):
+                    newList.append(list[i]+", "+list[i+1])
+                    i += 2
+                else:
+                    newList.append(list[i])
+                    i += 1
+            return newList
+
+
+        # Special decoding for the names
+        for column in ['spouse', 'children']:
+            df_data_not_clean[column] = df_data_not_clean[column].apply(
+                lambda x: combine_JR_SR(list(x.split(', '))) if isinstance(x, str) else list()
             )
             
         # clean the nationality list

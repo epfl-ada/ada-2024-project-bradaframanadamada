@@ -30,6 +30,7 @@ def create_movie_budget_revenue_ratings_graph():
             "Budget (USD)": True,
             "Box Office (USD)": True, },
         title='Performance of films based on budget, box office, ratings and number of votes',
+        template="plotly_white",
     )
 
     # Save graph to an HTML file
