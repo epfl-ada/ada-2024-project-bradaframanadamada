@@ -266,7 +266,7 @@ permalink: /
     On the other hand, comedic performers tend to move away from comedy as their careers goes and instead choose drama or adventure movies.
 </p>
 <p style="flex: 1; text-align: justify">
-    All things considered, this plot offers a lot of information, providing a thorough and complex look at how actors' tastes in genre change throughout their careers. 
+    All things considered, no correlation were found between the success of an actor and his/her genre pattern. However, this plot offers a lot of information, providing a thorough and complex look at how actors' tastes in genre change throughout their careers. 
     In addition to the highlighting of the consistency or variation in their decisions, 
     it also provides information into both individual career paths and more general industry patterns. 
     For example, switching from comedy to drama or adventure could be a reaction to audience tastes or an actor's wish to take on more difficult roles. 
@@ -734,8 +734,11 @@ This notion is supported by the results from the success metric analysis.
     To achieve a strong performance, a role defined by a given persona may require complementary occupations or professions 
     alongside an actor’s primary work. For example, many actors, especially those associated with certain personas, also have 
     experience in stage acting. This additional skills often enhances their ability to deliver nuanced performances or specialized performance (ex: singer).<br><br>
-    TO BE COMPLETED <br><br>
-    When examining the family environment of actors, it becomes evident that having a parent in the cinematographic field can significantly contribute to a successful career. 
+    When analyzing career path similarity through personas, we found that actors with paths similar to the most successful actors based on popularity tend to also achieve success.
+    However, when performing the analysis using the award score metric, this trend does not hold. Many actors with paths similar to those of the highest award-winning actors have
+    received few or no awards themselves. <br><br>
+    Moreover, the analysis of actors' favorite movie genres over their careers revealed patterns in how preferred genres change over time. 
+    Although no correlation was found between genre instability and an actor's success, valuable insights could still be derived from these patterns.When examining the family environment of actors, it becomes evident that having a parent in the cinematographic field can significantly contribute to a successful career.<br></br>
     This is especially true if the parent was a successful actor, although even less successful parents may provide valuable insights and knowledge about the cinematographic industry.<br>
     In opposition, having a successful actor as a spouse does not appear to have a direct impact on an actor’s popularity. 
     However, a notable proportion of actors with high award scores also have spouses with similarly high awards score.<br>
