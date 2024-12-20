@@ -1,6 +1,8 @@
 import pandas as pd
+
 GOOD_PERSONAS = {'the warrior', 'the child', 'the orphan', 'the creator', 'the caregiver', 'the mentor',
-                     'the joker', 'the magician', 'the ruler', 'the rebel', 'the lover', 'the seducer'}
+                 'the joker', 'the magician', 'the ruler', 'the rebel', 'the lover', 'the seducer'}
+
 
 def contains_at_least_k_good_personas(personas_list, k):
     """
@@ -15,6 +17,7 @@ def contains_at_least_k_good_personas(personas_list, k):
             num_good += 1
     return num_good >= k
 
+
 def is_unproblematic_actor(career):
     """
     check if an actor have at least 1 good persona for each movie he played in.
@@ -28,6 +31,7 @@ def is_unproblematic_actor(career):
             unproblematic = False
     return unproblematic
 
+
 def filter_out_problematic_actors(careers_path):
     """
     filter out rows that are problematic if we drop 'bad' personas
@@ -37,6 +41,7 @@ def filter_out_problematic_actors(careers_path):
     careers = careers_path['personas_list']
     unproblematics = careers.apply(is_unproblematic_actor)
     return careers_path[unproblematics.values]
+
 
 def drop_bad_personas_in_movie(personas_list):
     """
@@ -50,6 +55,7 @@ def drop_bad_personas_in_movie(personas_list):
             good_list.append(persona)
     return good_list
 
+
 def drop_bad_personas_in_path(career):
     """
     drop bad personas for all movies in the career
@@ -58,22 +64,38 @@ def drop_bad_personas_in_path(career):
     """
     return [drop_bad_personas_in_movie(movie) for movie in career]
 
+
 def drop_bad_personas(careers_path):
     """
     drop personas that are not part of the 12 good personas
     @param careers_path: dataframe with a 'personas_list' column representing the careers path personas
     @return: dataframe with 'personas_list' column containing only personas from the 12 good personas
     """
-    good_personas =  careers_path['personas_list'].apply(drop_bad_personas_in_path)
+    good_personas = careers_path['personas_list'].apply(drop_bad_personas_in_path)
     careers_path['personas_list'] = good_personas
     return careers_path
 
-if __name__ == '__main__':
-    # read datafram with all sort of personas
-    df = pd.read_pickle('../data/clean_careers_paths.pkl')
+
+def filter_personas(pickle_path='../data/clean_careers_paths.pkl',
+                    output_path='../data/clean_careers_paths_good_personas.pkl', save_file=True):
+    """
+    clean the personas in the dataframe to only have personas that are part of the 12 good personas
+    @param pickle_path: path to pickle file of careers paths dataframe
+    @param output_path: path to output pickle file of filtered careers paths dataframe
+    @param save_file: boolean flag to save filtered careers paths dataframe
+    @return: dataframe with only good personas
+    """
+    # read dataframe with all sort of personas
+    df = pd.read_pickle(pickle_path)
     # drop all rows that would results in empty lists
     df = filter_out_problematic_actors(df)
     # drop all personas that are not in the 12 personas defined
     df = drop_bad_personas(df)
+    if save_file:
+        df.to_pickle(output_path)
+    return df
+
+
+if __name__ == '__main__':
+    df = filter_personas()
     print(df)
-    df.to_pickle('../data/clean_careers_paths_good_personas.pkl')
