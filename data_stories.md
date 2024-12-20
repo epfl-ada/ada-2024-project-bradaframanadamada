@@ -141,7 +141,7 @@ permalink: /
     <p style="flex: 1; text-align: justify">
         To compare the scores based on imdb ratings and the scores based on awards we decided to do a scatter plot that shows 
         the actor opinion scores on axis y and the awards score along the x-axis. For each actor we also computed the overall 
-        score and the z_scored that represents the deviation from the mean. The size is proportional to the overall score
+        score and the z_score that represents the deviation from the mean. The size is proportional to the overall score
         and the colors represent the overall deviation.
     </p>
     <figure>
@@ -253,7 +253,11 @@ permalink: /
     An engaging method to investigate this is using the interactive plot below. Through the use of the CMU dataset, which includes the actor's age at the time of each film's release, the genres of the films they starred in, and a success metric, 
     we are able to graphically depict the progression of the actors' genre preferences—from the most well-known to the less well-known.
 </p>
-
+<p style="flex: 1; text-align: justify">
+    In order to achieve this, a histogram was used to count the number of films with a certain genre done during the year when the actor had a certain age. 
+    The adding of smooth curves permits a greater visualization of the genres distribution. Finally, the violin distributions 
+    permit to show when the actor has done the most movies of a certain genre. A dropdown menu is used to see the preferred gender history of another actor, from the most successful to the least.
+</p>
 <p align="center"><iframe src="src/graphs/actors_preferred_genres_by_age.html" width="1200" height="600"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
@@ -284,7 +288,7 @@ permalink: /
         the 12 personas defined earlier in our analysis. You can use the picker located in the top-right corner of the 
         graph to select the persona for which you want to display the top 20 most common actor occupations associated 
         with it. For this visualization, we exclude actor's occupations "actor", "film actor" and "television actor", as 
-        they are very closed to the core profession of acting. 
+        they are very close to the core profession of acting. 
     </p>
     <figure>
         <img src="src/image/actor_diversity_occupation_chatGPT.png" alt="actor_profession_diversity" width="350" height="200">
