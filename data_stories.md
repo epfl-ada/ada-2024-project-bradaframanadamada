@@ -16,7 +16,7 @@ permalink: /
     an actor has participated in and the box office performance of those films.<br><br>
     In the second part, we create another score that measures the cultural impact of the actor, derived from the number 
     of nominations and awards achieved in the Oscars category.<br><br>
-    Next, we aim to analyze the film genres in which actors predominantly work. (TODO: Complete this section with more details.)<br><br>
+    Next, we aim to analyze the film genres in which actors predominantly work and the changes through their life as well as the common pattern between actors.<br><br>
     In the fourth part, we associate each role played by an actor with a specific persona. We will then investigate which 
     of these personas are most commonly linked to success. Additionally, we will explore complementary professions or activities 
     often undertaken by actors and determine how these align with their personas.<br><br>
@@ -39,7 +39,7 @@ permalink: /
         deselect actors by clicking on their name or double click to select them all or only one.
     </p>
     <figure>
-        <img src="src/image/films_rating_with_actors_chatGPT.webp" width="200" height="200">
+        <img src="src/image/films_rating_actors_chatGPT.jpeg" width="350" height="200">
         <figcaption style="text-align: center"> Generated using AI</figcaption>
     </figure>
 </div>
@@ -70,7 +70,7 @@ permalink: /
         move by clicking on the arrows named plan on the top right of the graph.
     </p>
     <figure>
-        <img src="src/image/films_audience_score_and_box_office.webp" width="200" height="200">
+        <img src="src/image/films_audience_and_box_office_chatGPT.jpeg" width="350" height="200">
         <figcaption style="text-align: center"> Generated using AI</figcaption>
     </figure>
 </div>
@@ -123,7 +123,7 @@ permalink: /
     </figure>
 </div>
 
-<p align="center"><iframe src="src/graphs/Actors_Awards_Sunburst.html" width="1200" height="800" ></iframe></p>
+<p align="center"><iframe src="src/graphs/Actors_Awards_Sunburst.html" width="350" height="200"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     First, we want to check that our score metrics is well chosen to do so we have to see if the categories that are 
@@ -145,12 +145,12 @@ permalink: /
         and the colors represent the overall deviation.
     </p>
     <figure>
-        <img src="src/image/films_rating_with_actors_chatGPT.webp" width="200" height="200">
+        <img src="src/image/ratings_and_awards.png" width="200" height="200">
         <figcaption style="text-align: center"> Generated using AI</figcaption>
     </figure>
 </div>
 
-<p align="center"><iframe src="src/graphs/actor_awards_votes_graphs.html" width="1200" height="800" ></iframe></p>
+<p align="center"><iframe src="src/graphs/actor_awards_votes_graphs.html" width="350" height="200"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     On the graph, we can see that there is a huge amount of actors in the left bottom corner which are not really successful. 
@@ -248,7 +248,7 @@ permalink: /
     we are able to graphically depict the progression of the actors' genre preferences—from the most well-known to the less well-known.
 </p>
 
-<p align="center"><iframe src="src/graphs/actors_preferred_genres_by_age.html" width="1200" height="800"></iframe></p>
+<p align="center"><iframe src="src/graphs/actors_preferred_genres_by_age.html" width="1200" height="600"></iframe></p>
 
 <p style="flex: 1; text-align: justify">
     It exposes intriguing trends: some actors show some good adaptability in switching their specialty, 
