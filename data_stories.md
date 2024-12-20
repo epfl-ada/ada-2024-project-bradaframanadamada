@@ -726,7 +726,11 @@ This notion is supported by the results from the success metric analysis.
 # Conclusion
 
 <p style="flex: 1; text-align: justify">
-    TO BE COMPLETED <br><br>
+    The decision about whether an actor is successful or not comes from a combination of two key metrics: one representing 
+    the popularity of the movies they act in, and the other based on whether they starred
+    in an Oscar-winning film. Using both metrics is important because some actors appear in many popular movies that were
+    never nominated for Oscars. Since Oscars are not based on popularity, older movies often tend to have lower popularity
+    scores. However, popularity remains as significant an indicator of success in the movie industry as awards.<br><br>
     To achieve a strong performance, a role defined by a given persona may require complementary occupations or professions 
     alongside an actor’s primary work. For example, many actors, especially those associated with certain personas, also have 
     experience in stage acting. This additional skills often enhances their ability to deliver nuanced performances or specialized performance (ex: singer).<br><br>
