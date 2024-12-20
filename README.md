@@ -77,7 +77,7 @@ The goal of our analysis is to understand the factors that define a successful a
 - **(Q3) Award** (Steiner)
 - **(Q4) Family, academic and nationality impact** (Hof)
 
-## Changes with the actual version
+## Changes between P2 and P3
 In our project, both the Jupyter Notebook and the README file follow the same organizational structure, starting with
 the persona and actor specifications. However, for the website presenting the data story we opted for a different 
 approach. We began with the film success scores, followed by the award scores, and then transitioned to the personas and
