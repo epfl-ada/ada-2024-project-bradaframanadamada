@@ -77,6 +77,14 @@ The goal of our analysis is to understand the factors that define a successful a
 - **(Q3) Award** (Steiner)
 - **(Q4) Family, academic and nationality impact** (Hof)
 
+## Changes with the actual version
+In our project, both the Jupyter Notebook and the README file follow the same organizational structure, starting with
+the persona and actor specifications. However, for the website presenting the data story we opted for a different 
+approach. We began with the film success scores, followed by the award scores, and then transitioned to the personas and
+others actor relationships. This decision was made to leverage the scores as a visual entry point into the data. The final 
+section focusing on the impact of family, academic background, and nationality remains the same.
+
+
 ## Project Structure
 
 The directory structure of the project looks like this:
@@ -89,10 +97,14 @@ The directory structure of the project looks like this:
 │   ├── models                          <- Model directory
 │   ├── utils                           <- Utility directory
 │   ├── scripts                         <- Python Scripts
-|   ├── images                          <- Image used in the website
-|   ├── graphs                          <- HTML interactive graph used on the website
+│   ├── images                          <- Image used in the website
+│   ├── graphs                          <- HTML interactive graph used on the website
 │
 ├── tests                       <- Tests of any kind
+│
+├── data_stories.md             <- Markdown file that generates the GitHub Pages website.
+│
+├── personas_verification.îpynb <- jupyter notebook we use for persona verification
 │
 ├── results.ipynb               <- a well-structured notebook showing the results
 │
@@ -100,3 +112,4 @@ The directory structure of the project looks like this:
 ├── pip_requirements.txt        <- File for installing python dependencies
 └── README.md
 ```
+
