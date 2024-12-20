@@ -1,3 +1,9 @@
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+from scipy.stats import gaussian_kde
+import numpy as np
+
 def plot_genres_over_age_with_dropdown(actor_dfs, nb_genres):
     """
     This function creates a histogram with density curves for multiple actors, with a dropdown to select an actor.
@@ -113,24 +119,22 @@ def plot_genres_over_age_with_dropdown(actor_dfs, nb_genres):
     )
 
     # Save the plot
+    fig.show()
     fig.write_html("../../graphs/actors_preferred_genres_by_age.html")
 
-if __name__ == "__main__":
-    import pandas as pd
-    import plotly.express as px
-    import plotly.graph_objects as go
-    from scipy.stats import gaussian_kde
-    import numpy as np
-
+def compute_actor_genres_by_age():
+    """
+    This function computes and plots the favorite actor genres through their life.
+    """
     # Import DataFrames and drop possible NaN # This is your Project Root
     cmu_df = pd.read_pickle("../../data/metadata_cmu.pkl")
     cmu_df = cmu_df.dropna(subset=["Actor age at movie release"])
     actor_success_df = pd.read_csv("../../data/actors_success.csv")
 
-    actor_success_df.rename(columns={'freebase_actor_id':'Freebase actor ID'}, inplace=True)
+    actor_success_df.rename(columns={'freebase_actor_id': 'Freebase actor ID'}, inplace=True)
 
     NB_GENRES = 5
-    NB_ACTORS = 50
+    NB_ACTORS = 100
 
     # Get the NB_ACTORS most popular actors
     most_popular_actors_list = actor_success_df.sort_values("score", ascending=False)[:NB_ACTORS]
@@ -144,3 +148,6 @@ if __name__ == "__main__":
 
     # Call the plot function
     plot_genres_over_age_with_dropdown(actors_dict, NB_GENRES)
+
+if __name__ == "__main__":
+    compute_actor_genres_by_age()

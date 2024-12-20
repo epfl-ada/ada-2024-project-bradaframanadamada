@@ -205,6 +205,38 @@ permalink: /
     to evaluate due to the lack of direct occupations linked to humor.<br><br>
 </p>
 
+## What are the preferred film genres of successful actors?
+<p style="flex: 1; text-align: justify">
+    Whether it's comedy, drama, action, or another genre, actors frequently have favorite film genres in which they want to work. 
+    Do these preferences, however, hold true over the course of their careers? How frequently do actors switch to a different genre, maybe to take on new challenges or adjust to shifting fashions? 
+    What's more interesting is whether an actor's career is related to how consistently they choose their genres. 
+    Are the most successful actors more inclined to switch between several storytelling approaches or do they often stick to one?
+</p>
+<p style="flex: 1; text-align: justify">
+    Analyzing performers' "genre history"—that is, their inclinations toward different genres throughout time—would be crucial to answering this question. 
+    An engaging method to investigate this is using the interactive plot below. Through the use of the CMU dataset, which includes the actor's age at the time of each film's release, the genres of the films they starred in, and a success metric, 
+    we are able to graphically depict the progression of the actors' genre preferences—from the most well-known to the less well-known.
+</p>
+
+<p align="center"><iframe src="src/graphs/actors_preferred_genres_by_age.html" width="1200" height="800"></iframe></p>
+
+<p style="flex: 1; text-align: justify">
+    It exposes intriguing trends: some actors show some good adaptability in switching their specialty, 
+    while others stick to a particular genre throughout their careers. 
+    Even though performers typically stay within their preferred genres, even little changes in their selections might yield fascinating insights.
+</p>
+<p style="flex: 1; text-align: justify">
+    One noteworthy pattern is that actors who are liking drama usually stick with it, and intriguingly tend to play some thriller roles at the end of their career. 
+    On the other hand, comedic performers tend to move away from comedy as their careers goes and instead choose drama or adventure movies.
+</p>
+<p style="flex: 1; text-align: justify">
+    All things considered, this plot offers a lot of information, providing a thorough and complex look at how actors' tastes in genre change throughout their careers. 
+    In addition to the highlighting of the consistency or variation in their decisions, 
+    it also provides information into both individual career paths and more general industry patterns. 
+    For example, switching from comedy to drama or adventure could be a reaction to audience tastes or an actor's wish to take on more difficult roles. 
+    This visualization offers an unmatched glimpse into how cinema careers change, develop, or remain firmly planted in particular creative domains by showing the favorite genres at different points in an actor's life.
+</p>
+
 ## The Diversity in the actors occupations/professions. 
 <div style="display:flex; align-items: center;">
     <p style="flex: 1; text-align: justify">
