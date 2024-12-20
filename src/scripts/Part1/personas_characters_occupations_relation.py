@@ -15,7 +15,7 @@ def create_relation_graph_personas_characters_occupations():
     personas_dataset =  personas_dataset[['personas_list', 'wikipedia_movies_id', 'freebase_actor_id']]
 
     # Load the dataset that contains the activities of each character.
-    character_dataset = pd.read_csv('src/data/wikidata_characters_clean.csv')
+    character_dataset = pd.read_csv('src/data/wikidata_characters_clean.csv', quotechar='"')
     # Only keep the relevant infos
     character_dataset = character_dataset[['freebase_id', 'occupation_lst']]
 
@@ -126,6 +126,7 @@ def create_relation_graph_personas_characters_occupations():
         xaxis_tickangle=-45,
         hovermode='closest',
         height=800,
+        template="plotly_white",
         updatemenus=[
             {
                 'buttons': dropdown_personas_selection,

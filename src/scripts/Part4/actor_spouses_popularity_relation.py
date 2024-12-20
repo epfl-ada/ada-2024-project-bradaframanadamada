@@ -10,7 +10,7 @@ def create_graph_actors_with_spouses_actor_distribution():
     who are also actors.
     """
     # load the actor's wikidata
-    actor_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv")
+    actor_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv", quotechar='"')
 
     # transform the string of the columns of spouses into array.
     actor_wikidata['spouse_lst'] = actor_wikidata['spouse_lst'].apply(ast.literal_eval)
@@ -58,8 +58,8 @@ def create_graph_actors_with_spouses_popularity_correlation():
         and the popularity of their spouses.
     """
     # load the actor's wikidata
-    actor_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv")
-    actor_wikidata_orig = pd.read_csv("src/data/wikidata_actors_clean.csv")
+    actor_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv", quotechar='"')
+    actor_wikidata_orig = pd.read_csv("src/data/wikidata_actors_clean.csv", quotechar='"')
 
     # transform the string of the columns of spouses into array.
     actor_wikidata['spouse_lst'] = actor_wikidata['spouse_lst'].apply(ast.literal_eval)
@@ -168,7 +168,7 @@ def create_graph_actors_with_spouses_popularity_correlation():
         y=actor_wikidata['overall_score_actor'],
         mode='markers',
         name='Overall Score',
-        marker_color='red',
+        marker_color='green',
         text=actor_wikidata['actor_name'],
         customdata=actor_wikidata['spouse'],
         hovertemplate=(

@@ -10,7 +10,7 @@ def create_relation_graph_personas_occupations():
     # Load the careers paths of the actors to retrieve the list of their personas.
     personas_dataset = pd.read_pickle('src/data/clean_careers_paths_good_personas.pkl')
     # Load the dataset that contains the activities of each actor.
-    actor_dataset = pd.read_csv('src/data/wikidata_actors_clean.csv')
+    actor_dataset = pd.read_csv('src/data/wikidata_actors_clean.csv', quotechar='"')
 
     # Merge the two dataset with their freebase actor ID
     actor_merged = pd.merge(personas_dataset,
@@ -99,6 +99,7 @@ def create_relation_graph_personas_occupations():
         xaxis_tickangle=-45,
         hovermode='closest',
         height=800,
+        template="plotly_white",
         updatemenus=[
             {
                 'buttons': dropdown_personas_selection,

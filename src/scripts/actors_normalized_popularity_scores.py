@@ -5,12 +5,12 @@ def get_normalized_popularity_scores():
     and calculated a new score based both on the award score and on the opinion score.
     """
     # Load the dataset that contains the success score based on the film's review and the box office.
-    actors_success = pd.read_csv("src/data/actors_success.csv")
+    actors_success = pd.read_csv("src/data/actors_success.csv", quotechar='"')
     # rename the column opinion_score
     actors_success = actors_success.rename(columns={"score": "opinion_score"})
 
     # Load the dataset that contains the success score based on the actor's awards.
-    actors_awards = pd.read_csv("src/data/actors_awards_scores.csv")
+    actors_awards = pd.read_csv("src/data/actors_awards_scores.csv", quotechar='"')
     # rename the column score
     actors_awards = actors_awards.rename(columns={"score": "award_score"})
 

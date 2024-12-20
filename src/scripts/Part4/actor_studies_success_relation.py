@@ -12,7 +12,7 @@ def create_actor_studies_actor_count_distribution():
     universities, displaying the top 20 universities with the highest number of actor attendees.
     """
     # load the actor wikidata
-    actor_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv")
+    actor_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv", quotechar='"')
     # flatten the list of all universities present on each actor row
     universities_lst = [university for actorUniversityLst in actor_wikidata['alma_mater_lst'].apply(ast.literal_eval) for
                        university in set(actorUniversityLst)]  # make each university unique for each actor
@@ -55,7 +55,7 @@ def create_actor_studies_success_relation_graph(with_actor_count_weight):
         actor count per university category.
     """
     # load the dataset that contains wikidata infos of the actors
-    actors_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv")
+    actors_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv", quotechar='"')
     # only extract the actor name, the actor freebase ID and the alma_mater (universities background) from the data
     actors_wikidata = actors_wikidata[["actor_name", "freebase_id", "alma_mater_lst"]]
     # Transform the alma_matter column into list
@@ -208,7 +208,7 @@ def create_actor_studies_success_relation_graph(with_actor_count_weight):
         )],
         height = 800,  # to see all the universities
         # add legends to the graph.
-        title = "Top 20 Universities by Actor Popularity Scores",
+        title = f"Top 20 Universities with the most important University Score with a weight of {with_actor_count_weight})",
         xaxis_title = "Score",
         yaxis_title = "University",
         template = "plotly_white",

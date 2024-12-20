@@ -12,7 +12,7 @@ def create_actor_nationalities_count_distribution():
     This function creates an interactive bar chart to display the number of actor distribution by nationalities.
     """
     # Load the dataset that contains wikidata infos of the actors
-    actors_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv")
+    actors_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv", quotechar='"')
     # Only extract the actor name, the actor freebase ID and the nationalities columns from the data
     actors_wikidata = actors_wikidata[["actor_name", "freebase_id", "nationality_lst"]]
     # Transform the nationalities column into list
@@ -69,7 +69,7 @@ def create_actor_nationalities_success_relation_graph(with_actor_count_weight):
         actor count per nationality category.
     """
     # Load the dataset that contains wikidata infos of the actors
-    actors_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv")
+    actors_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv", quotechar='"')
     # Only extract the actor name, the actor freebase ID and the nationalities columns from the data
     actors_wikidata = actors_wikidata[["actor_name", "freebase_id", "nationality_lst"]]
     # Transform the nationalities column into list
@@ -109,7 +109,7 @@ def create_actor_nationalities_success_relation_graph(with_actor_count_weight):
         actor_count = ("freebase_id", "count")
     ).reset_index()
 
-    # Normalize the actor count (from o to 1) to be able to realize a score that take into account both the mean popularity score and the actor count
+    # Normalize the actor count (from 0 to 1) to be able to realize a score that take into account both the mean popularity score and the actor count
     max_actor_count = nationality_stats["actor_count"].max()
     min_actor_count = nationality_stats["actor_count"].min()
     nationality_stats["normalized_actor_count"] = (nationality_stats["actor_count"] - min_actor_count) / (max_actor_count - min_actor_count)
@@ -130,7 +130,7 @@ def create_actor_nationalities_success_relation_graph(with_actor_count_weight):
             + nationality_stats["normalized_actor_count"] * with_actor_count_weight
     )
 
-    # Extract the top 20 universities for each score type
+    # Extract the top 20 nationalities for each score type
     sorted_opinion_score = nationality_stats.sort_values(by="weighted_mean_opinion_score", ascending=False).head(20)
     sorted_award_score = nationality_stats.sort_values(by="weighted_mean_award_score", ascending=False).head(20)
     sorted_overall_score = nationality_stats.sort_values(by="weighted_mean_overall_score", ascending=False).head(20)
@@ -219,9 +219,7 @@ def create_actor_nationalities_success_relation_graph(with_actor_count_weight):
         )],
         height=800,  # to be sure to see all the nationalities
         # add legends to the graph.
-        title=f"Top 20 Nationalities with the most important weighted score(obtained as combination of the mean of \n "
-              f"the actor's popularity score and the nuzmber of actor count in the nationality categorie with an \n"
-              f"important weight of {with_actor_count_weight})",
+        title=f"Top 20 Nationalities with the most important Nationality Score with a weight of {with_actor_count_weight})",
         xaxis_title="Weighted score",
         yaxis_title="Nationality",
         template="plotly_white",

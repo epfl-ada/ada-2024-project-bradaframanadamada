@@ -10,7 +10,7 @@ def create_graph_actors_with_parents_actor_distribution():
     who are also actors.
     """
     # load the actor's wikidata
-    actor_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv")
+    actor_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv", quotechar='"')
 
     # transform the string of the columns of children into array.
     actor_wikidata['children_lst'] = actor_wikidata['children_lst'].apply(ast.literal_eval)
@@ -62,8 +62,8 @@ def create_graph_actors_with_parents_popularity_correlation():
         and the popularity of their parents.
     """
     # load the actor's wikidata
-    actor_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv")
-    actor_wikidata_orig = pd.read_csv("src/data/wikidata_actors_clean.csv")
+    actor_wikidata = pd.read_csv("src/data/wikidata_actors_clean.csv", quotechar='"')
+    actor_wikidata_orig = pd.read_csv("src/data/wikidata_actors_clean.csv", quotechar='"')
 
     # transform the string of the columns of children into array.
     actor_wikidata['children_lst'] = actor_wikidata['children_lst'].apply(ast.literal_eval)
@@ -94,6 +94,10 @@ def create_graph_actors_with_parents_popularity_correlation():
                                                     'actor_name_x': 'actor_name',
                                                     'parents': 'parent',
                                                     'freebase_id_y': 'parent_freebase_id'})
+
+    # remove from the list the parents and actor with the same freebase ID (case where thy have the same name)
+    actor_wikidata = actor_wikidata[actor_wikidata['freebase_id'] != actor_wikidata['parent_freebase_id']]
+
     actor_wikidata = actor_wikidata[['freebase_id', 'actor_name', 'parent', 'parent_freebase_id']]
 
     # load the different actor's popularity score
