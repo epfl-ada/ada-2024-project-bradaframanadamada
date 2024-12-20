@@ -89,8 +89,8 @@ The directory structure of the project looks like this:
 │   ├── models                          <- Model directory
 │   ├── utils                           <- Utility directory
 │   ├── scripts                         <- Python Scripts
-|   ├── images                         <- Image used in the website
-|   ├── scripts                         <- HTML interactive graph used on the website
+|   ├── images                          <- Image used in the website
+|   ├── graphs                          <- HTML interactive graph used on the website
 │
 ├── tests                       <- Tests of any kind
 │
