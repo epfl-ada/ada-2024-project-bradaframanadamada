@@ -171,6 +171,12 @@ permalink: /
 
 <div style="display:flex; align-items: center;">
     <p style="flex: 1; text-align: justify">
+     Personas refer to character archetypes, and for this analysis, we selected the 12 archetypes commonly defined in cinema. 
+     Using large language models (LLMs), we extracted characters and their corresponding archetypes (personas) from movie summaries and 
+     linked them to actors via movie metadata, which assigns characters to actors. The following analyses use the personas an 
+     actor has portrayed throughout their career as a representation of their career trajectory.
+    </p>
+    <p style="flex: 1; text-align: justify">
         We have extracted only a relatively small proportion of occupations per characters originally. As a result, 
         this part doesn't represent a major part of our analysis. However, they provide an interesting opportunity 
         to validate the personas previously extracted using an LLM. By linking characters' occupations to their 
