@@ -9,7 +9,20 @@ permalink: /
 # Introduction
 
 <p style="flex: 1; text-align: justify">
-    TO BE COMPLETED
+    The primary objective of our analysis is to identify the key factors that contribute to the success of an actor's career.
+    <br><br> 
+    To achieve this, we need firstly to establish metrics to evaluate an actor's popularity in the cinematographic field.
+    In the first part of our analysis, we develop a popularity score based on two main factors: audience opinions on the films 
+    an actor has participated in and the box office performance of those films.<br><br>
+    In the second part, we create another score that measures the cultural impact of the actor, derived from the number 
+    of nominations and awards achieved in the Oscars category.<br><br>
+    Next, we aim to analyze the film genres in which actors predominantly work. (TODO: Complete this section with more details.)<br><br>
+    In the fourth part, we associate each role played by an actor with a specific persona. We will then investigate which 
+    of these personas are most commonly linked to success. Additionally, we will explore complementary professions or activities 
+    often undertaken by actors and determine how these align with their personas.<br><br>
+    Finally, in the last part of the analysis, we use the two popularity scores calculated earlier to evaluate whether factors 
+    such as family background (parents and spouses), nationality, and educational background influence an actor’s popularity. 
+    We will also examine whether most actors exclusively work in their home countries or prefer to perform in foreign film production countries.
 </p>
 
 # How can we define a good actor's performance based on the film’s success he performed in ?
@@ -147,7 +160,7 @@ permalink: /
     - It is challenging to fully evaluate the relevance of the <b>orphan</b> persona, even it is linked to occupations like 
     <b>student</b> and <b>soldier</b> roles often performed by orphaned characters in movies.<br><br>
     - The <b>creator</b> persona is linked to a broad range of occupations, many of which are connected to the innovative 
-    field, such as <b>inventor</b>, <b>scientist</b> and <b>writer</b>.
+    field, such as <b>inventor</b>, <b>scientist</b> and <b>writer</b>.<br><br>
     - The <b>child</b> persona is predominantly associated with occupations like <b>schoolchild</b> and <b>student</b>, 
     which is appropriate for this role.<br><br>
     Overall, most personas show their relevance through this analysis, even though the <b>joker</b> persona is harder 
@@ -584,5 +597,18 @@ We repeat the previous analysis with the award score metric.
 # Conclusion
 
 <p style="flex: 1; text-align: justify">
-    TO BE COMPLETED
+    TO BE COMPLETED <br><br>
+    To achieve a strong performance, a role defined by a given persona may require complementary occupations or professions 
+    alongside an actor’s primary work. For example, many actors, especially those associated with certain personas, also have 
+    experience in stage acting. This additional skills often enhances their ability to deliver nuanced performances or specialized performance (ex: singer).<br><br>
+    TO BE COMPLETED <br><br>
+    When examining the family environment of actors, it becomes evident that having a parent in the cinematographic field can significantly contribute to a successful career. 
+    This is especially true if the parent was a successful actor, although even less successful parents may provide valuable insights and knowledge about the cinematographic industry.<br>
+    In opposition, having a successful actor as a spouse does not appear to have a direct impact on an actor’s popularity. 
+    However, a notable proportion of actors with high award scores also have spouses with similarly high awards score.<br>
+    Attending a prestigious university can also contribute to a successful career. Among the most prominent institutions is the Royal Academy of Dramatic Art in England.
+    Other top universities for actors are primarily located in the United States.<br>
+    Regarding nationality, it comes as no surprise that the majority of successful actors are American, followed by actors from the United Kingdom and India.<br>
+    Finally, most actors do not exclusively perform in their home countries, indicating the necessity of international mobility during their careers. 
+    However, the most popular actors tend to perform primarily in their home countries (which may be influenced by fact that most of the popular actor are american).
 </p>
